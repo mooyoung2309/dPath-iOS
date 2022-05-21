@@ -10,7 +10,10 @@ import SnapKit
 import Then
 
 class CoverView: UIView {
-    
+    let backGroundView = UIView().then {
+        $0.addBlurToView()
+    }
+
     let labelCoverView = UIView().then {
         $0.backgroundColor = .gray
         $0.layer.masksToBounds = true
@@ -34,6 +37,12 @@ class CoverView: UIView {
         $0.backgroundColor = .clear
         $0.font = .systemFont(ofSize: 16, weight: .bold)
     }
+    
+    let dateLabel = UILabel().then {
+        $0.text = "2020-00-00"
+        $0.textColor = .black
+        $0.font = .systemFont(ofSize: 12, weight: .light)
+    }
   
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -50,10 +59,16 @@ class CoverView: UIView {
     
     
     private func configureUI() {
-        addSubview(labelCoverView)
+        addSubview(backGroundView)
+        backGroundView.addSubview(labelCoverView)
         labelCoverView.addSubview(titleLabel)
-        addSubview(schoolNameLabel)
-        addSubview(schoolFestivalLabel)
+        backGroundView.addSubview(schoolNameLabel)
+        backGroundView.addSubview(schoolFestivalLabel)
+        backGroundView.addSubview(dateLabel)
+        
+        backGroundView.snp.makeConstraints { make in
+            make.edges.equalToSuperview()
+        }
         
         titleLabel.snp.makeConstraints { make in
             make.center.equalToSuperview()
@@ -78,5 +93,12 @@ class CoverView: UIView {
             make.leading.equalToSuperview().inset(18)
             schoolFestivalLabel.sizeToFit()
         }
+        
+        dateLabel.snp.makeConstraints { make in
+            make.trailing.equalToSuperview().offset(-10)
+            make.centerY.equalTo(titleLabel)
+            dateLabel.sizeToFit()
+        }
+    
     }
 }

@@ -16,6 +16,7 @@ class HomeCardViewController:UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configure()
+        print("tesst")
     }
     
     private func configure() {

@@ -47,4 +47,17 @@ extension UIView {
         gradient.frame = bounds
         layer.addSublayer(gradient)
     }
+    
+    func addBlurToView() {
+        var blurEffect: UIBlurEffect!
+        if #available(iOS 10.0, *) {
+            blurEffect = UIBlurEffect(style: .light)
+        }
+        
+        let blurredEffectView = UIVisualEffectView(effect: blurEffect)
+        blurredEffectView.frame = self.bounds
+        blurredEffectView.alpha = 0.8
+        blurredEffectView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        self.addSubview(blurredEffectView)
+    }
 }

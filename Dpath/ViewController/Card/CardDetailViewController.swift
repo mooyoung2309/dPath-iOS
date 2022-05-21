@@ -9,11 +9,20 @@ import UIKit
 
 class CardDetailViewController: UIViewController {
 
+    let selfView = CardView()
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        view.backgroundColor = .red
+        
+        configure()
     }
     
-
+    private func configure() {
+        view.addSubview(selfView)
+        selfView.snp.makeConstraints { make in
+            make.leading.trailing.equalToSuperview()
+            make.top.equalTo(self.view.safeAreaLayoutGuide.snp.top)
+            make.bottom.equalTo(self.view.safeAreaLayoutGuide.snp.bottom)
+        }
+    }
+    
 }

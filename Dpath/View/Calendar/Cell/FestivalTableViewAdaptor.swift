@@ -9,7 +9,7 @@ import UIKit
 
 class FestivalTableViewAdaptor: NSObject, UITableViewDelegate, UITableViewDataSource {
     weak var superVC: UIViewController!
-    let festivals: [String] = ["성신여대 대동제", "세종대 봄축제", "가천대 여름축제"]
+    let festivals: [String] = ["성신여대 대동제", "세종대 봄축제"]
     
     init(_ superVC: UIViewController) {
         super.init()

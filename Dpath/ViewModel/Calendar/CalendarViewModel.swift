@@ -41,7 +41,7 @@ class CalendarViewModel: ViewModel {
     
     init() {
         setBind()
-//        input.date.onNext(Date())
+        input.date.onNext(Date())
     }
 }
 

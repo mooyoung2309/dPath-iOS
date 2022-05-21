@@ -22,6 +22,10 @@ extension Date{
         dateFormatter.dateFormat = "YYYY.M"
         return dateFormatter.string(from: self)
     }
+    var monthString: String{
+        dateFormatter.dateFormat = "M.d"
+        return dateFormatter.string(from: self)
+    }
     var timeString : String{
         dateFormatter.dateFormat = "a HH:mm"
         return dateFormatter.string(from: self)

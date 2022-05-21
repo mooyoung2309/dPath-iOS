@@ -53,6 +53,7 @@ class CalendarCollectionViewAdaptor: UICollectionViewFlowLayout, UICollectionVie
         Log(indexPath)
         if let calendarVC = superVC as? CalendarViewController {
             calendarVC.showBottomSheetView()
+            calendarVC.viewModel.input.date.onNext(dates[indexPath.row])
         }
     }
 }

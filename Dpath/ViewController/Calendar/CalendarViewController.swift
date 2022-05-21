@@ -52,9 +52,7 @@ class CalendarViewController: UIViewController, UIScrollViewDelegate {
         $0.backgroundColor = .white
         $0.separatorStyle = .singleLine
         $0.separatorInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
-        $0.rowHeight = 80
-//        $0.rowHeight = UITableView.automaticDimension
-//        $0.estimatedRowHeight = 50
+        $0.rowHeight = 85
     }
     
     var scrollViewHeightConstraint = NSLayoutConstraint()
@@ -131,6 +129,8 @@ extension CalendarViewController {
         nextCalendarCollectionView.translatesAutoresizingMaskIntoConstraints = false
         festivalTableView.translatesAutoresizingMaskIntoConstraints = false
 
+//        scrollView.delegate = self
+        
         scrollViewBottomConstraint = scrollView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor)
         bottomSheetHeightConstraint = bottomSheet.heightAnchor.constraint(equalToConstant: 0)
         datePickerHeightConstraint = datePicker.heightAnchor.constraint(equalToConstant: 0)
@@ -210,6 +210,7 @@ extension CalendarViewController {
             .bind { owner, date in
                 Log(date)
                 owner.monthLabel.text = date.dateString
+                owner.bottomSheet.titleLabel.text = date.monthString
             }
             .disposed(by: disposeBag)
         
@@ -324,10 +325,12 @@ extension CalendarViewController {
     func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
         if scrollView.contentOffset.x > scrollView.frame.width {
             self.viewModel.input.date.onNext(try! self.viewModel.input.date.value().plusPeriod(Period.month, interval: 1))
+            Log("다음 달")
         } else if scrollView.contentOffset.x < scrollView.frame.width {
             self.viewModel.input.date.onNext(try! self.viewModel.input.date.value().plusPeriod(Period.month, interval: -1))
+            Log("이전 달")
         } else {
-            
+            Log("현재 달")
         }
         scrollView.contentOffset.x = scrollView.frame.width
     }

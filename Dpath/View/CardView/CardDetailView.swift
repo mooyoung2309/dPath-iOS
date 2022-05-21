@@ -1,18 +1,15 @@
 //
-//  HomeCardCell.swift
+//  CardDetailView.swift
 //  Dpath
 //
 //  Created by sangheon on 2022/05/21.
 //
 
 import UIKit
-import FSPagerView
-import SnapKit
 import Then
 
-class HomeCardCell:FSPagerViewCell {
-    static let Identifiler = "HomeCardCell"
-    
+class CardDetailView: BasicView {
+
     let cardImageView = UIImageView(image: UIImage(named: "crop"))
     
     let labelCoverView = UIView().then {
@@ -27,7 +24,7 @@ class HomeCardCell:FSPagerViewCell {
         $0.textAlignment = .center
         $0.backgroundColor = .red
     }
-    
+   
     let likeButton = UIButton().then {
        // $0.setImage(UIImage(named:""), for: .normal)
         $0.backgroundColor = .red
@@ -37,22 +34,17 @@ class HomeCardCell:FSPagerViewCell {
         $0.backgroundColor = .yellow
     }
     
-    override func layoutSubviews() {
-        super.layoutSubviews()
-        contentView.backgroundColor = .gray
-        configureUI()
-    }
-    
-    private func configureUI() {
-        contentView.addSubview(coverView)
-        contentView.addSubview(cardImageView)
-        contentView.addSubview(labelCoverView)
+    override func configureUI() {
+        super.configureUI()
+        addSubview(coverView)
+        addSubview(cardImageView)
+        addSubview(labelCoverView)
         labelCoverView.addSubview(dayCountLabel)
-        contentView.addSubview(likeButton)
+        addSubview(likeButton)
         
         coverView.snp.makeConstraints { make in
             make.trailing.leading.bottom.equalToSuperview()
-            make.height.equalTo(contentView.height * 0.17)
+            make.height.equalTo(self.height * 0.17)
         }
         
         cardImageView.snp.makeConstraints { make in
@@ -77,9 +69,8 @@ class HomeCardCell:FSPagerViewCell {
             make.bottom.equalTo(coverView.snp.top).offset(-10)
             make.height.width.equalTo(40)
         }
+        
     }
     
-//    func configure(with model:) {
-//
-//    }
+
 }

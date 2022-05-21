@@ -15,12 +15,21 @@ class HomeCardViewController:UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        configure()
+    }
+    
+    private func configure() {
         selfView.cardTableView.delegate = self
         selfView.cardTableView.dataSource = self
         view.addSubview(selfView)
         selfView.snp.makeConstraints { make in
             make.edges.equalToSuperview()
         }
+    }
+    
+    private func moveToNextNav() {
+        let detail = CardDetailViewController()
+        self.navigationController?.pushViewController(detail, animated: true)
     }
     
 }
@@ -34,10 +43,14 @@ extension HomeCardViewController: FSPagerViewDelegate,FSPagerViewDataSource  {
 
     func pagerView(_ pagerView: FSPagerView, cellForItemAt index: Int) -> FSPagerViewCell {
         guard let cell = pagerView.dequeueReusableCell(withReuseIdentifier: HomeCardCell.Identifiler, at: index) as? HomeCardCell else {
-            fatalError("Sliding cell die..")
+            return FSPagerViewCell()
         }
 
         return cell
     }
-
+    
+    func pagerView(_ pagerView: FSPagerView, didSelectItemAt index: Int) {
+        print(index)
+        moveToNextNav()
+    }
 }

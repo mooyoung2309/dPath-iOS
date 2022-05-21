@@ -56,7 +56,4 @@ class CommunityDetailView:BasicView {
         
         cardView.coverView.updateDateLabel.isHidden = false
     }
-
-    
-    
 }

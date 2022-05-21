@@ -6,10 +6,13 @@
 //
 
 import UIKit
+import RxCocoa
+import RxSwift
 
 class CommunityDetailViewController: UIViewController {
     
     var postId: Int!
+    let disposeBag = DisposeBag()
     let selfView = CommunityDetailView()
     
     required init?(coder: NSCoder) {
@@ -24,6 +27,7 @@ class CommunityDetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configureUI()
+        setBind()
     }
     
     private func configureUI() {
@@ -32,5 +36,13 @@ class CommunityDetailViewController: UIViewController {
             make.leading.trailing.bottom.equalToSuperview()
             make.top.equalTo(view.safeAreaLayoutGuide.snp.top)
         }
+    }
+    
+    private func setBind() {
+        selfView.bottomView.chatOpenButton.rx.tap
+            .asDriver()
+            .drive(onNext: {
+                print("go next page")
+            }).disposed(by: disposeBag)
     }
 }

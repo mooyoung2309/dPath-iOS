@@ -44,8 +44,8 @@ class CardView: BasicView {
         
         
         cardImageView.snp.makeConstraints { make in
-//            make.leading.trailing.top.equalToSuperview()
-//            make.bottom.equalTo(coverView.snp.top)
+            //            make.leading.trailing.top.equalToSuperview()
+            //            make.bottom.equalTo(coverView.snp.top)
             make.edges.equalToSuperview()
         }
         
@@ -71,7 +71,7 @@ class CardView: BasicView {
             make.bottom.equalTo(coverView.snp.top).offset(-10)
             make.height.width.equalTo(40)
         }
-  
+        
     }
-
+    
 }

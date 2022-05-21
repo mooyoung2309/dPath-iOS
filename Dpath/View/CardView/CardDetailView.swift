@@ -51,25 +51,25 @@ class CardDetailView: BasicView {
         }
     }
     
-   private func updateCoverView() {
-       selfView.likeButton.isHidden = true 
-       selfView.coverView.dateLabel.isHidden = true 
-       addSubview(likeButton)
-       addSubview(shareButton)
-       
-       
-       shareButton.snp.makeConstraints { make in
-           make.top.trailing.equalTo(selfView.coverView).inset(16)
-           make.height.width.equalTo(24)
-       }
-       
-       likeButton.snp.makeConstraints { make in
-           make.trailing.equalTo(shareButton.snp.leading).offset(-14)
-           make.centerY.equalTo(shareButton)
-           make.height.width.equalTo(24)
-       }
-       
-       selfView.coverView.updateDateLabel.isHidden = false
-   }
-
+    private func updateCoverView() {
+        selfView.likeButton.isHidden = true
+        selfView.coverView.dateLabel.isHidden = true
+        addSubview(likeButton)
+        addSubview(shareButton)
+        
+        
+        shareButton.snp.makeConstraints { make in
+            make.top.trailing.equalTo(selfView.coverView).inset(16)
+            make.height.width.equalTo(24)
+        }
+        
+        likeButton.snp.makeConstraints { make in
+            make.trailing.equalTo(shareButton.snp.leading).offset(-14)
+            make.centerY.equalTo(shareButton)
+            make.height.width.equalTo(24)
+        }
+        
+        selfView.coverView.updateDateLabel.isHidden = false
+    }
+    
 }

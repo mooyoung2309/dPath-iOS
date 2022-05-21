@@ -37,7 +37,6 @@ class MyChatTableViewApdator: NSObject, UITableViewDelegate, UITableViewDataSour
             return cell
         } else {
             let cell = tableView.dequeueReusableCell(withIdentifier: MyChatTableViewCell.identifier, for: indexPath) as! MyChatTableViewCell
-            
             cell.update(chat: chats[indexPath.section])
             cell.selectionStyle = .none
             return cell

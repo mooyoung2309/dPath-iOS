@@ -13,7 +13,7 @@ class CoverView: UIView {
     let backGroundView = UIView().then {
         $0.addBlurToView()
     }
-
+    
     let labelCoverView = UIView().then {
         $0.backgroundColor = .whiteRedColor
         $0.layer.masksToBounds = true
@@ -50,8 +50,8 @@ class CoverView: UIView {
         $0.font = .systemFont(ofSize: 12, weight: .light)
         $0.isHidden = true
     }
-
-  
+    
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
     }
@@ -113,7 +113,7 @@ class CoverView: UIView {
             make.leading.equalTo(titleLabel.snp.trailing).offset(14)
             updateDateLabel.sizeToFit()
         }
-    
+        
     }
     
 }

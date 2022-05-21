@@ -47,6 +47,9 @@ class CalendarCollectionViewAdaptor: UICollectionViewFlowLayout, UICollectionVie
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         Log(indexPath)
+        if let calendarVC = superVC as? CalendarViewController {
+            calendarVC.showBottomSheetView()
+        }
     }
 }
 

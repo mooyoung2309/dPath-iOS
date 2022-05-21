@@ -16,8 +16,6 @@ class HomeCardViewController:UIViewController {
         
     }
     
-    
-    
 }
 
 
@@ -28,7 +26,7 @@ extension HomeCardViewController: FSPagerViewDelegate,FSPagerViewDataSource  {
     }
     
     func pagerView(_ pagerView: FSPagerView, cellForItemAt index: Int) -> FSPagerViewCell {
-        <#code#>
+        
     }
     
     

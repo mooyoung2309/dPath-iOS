@@ -32,7 +32,6 @@ class HomeCardCell:FSPagerViewCell {
 
     }
     
-    
     override func prepareForReuse() {
         super.prepareForReuse()
     }

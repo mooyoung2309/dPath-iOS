@@ -11,10 +11,10 @@ import FSPagerView
 
 class HomeCardView:BasicView {
     
-    private let slidingTableView:FSPagerView = {
+    let cardTableView:FSPagerView = {
         let table = FSPagerView()
         table.itemSize = CGSize(width: 292, height: 580)
-        //table.register(SlidingCell.self, forCellWithReuseIdentifier:SlidingCell.Identifiler )
+        table.register(HomeCardCell.self, forCellWithReuseIdentifier:HomeCardCell.Identifiler )
         table.transformer = FSPagerViewTransformer(type: .linear)
         table.isInfinite = true
         table.interitemSpacing = 4
@@ -23,8 +23,9 @@ class HomeCardView:BasicView {
     
     override func configureUI() {
         super.configureUI()
+        addSubview(cardTableView)
         
-        slidingTableView.snp.makeConstraints { make in
+        cardTableView.snp.makeConstraints { make in
             make.edges.equalToSuperview()
         }
     }

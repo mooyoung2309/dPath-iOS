@@ -6,39 +6,37 @@
 //
 
 import UIKit
+import SnapKit
+import Then
 
 class CoverView: UIView {
     
-     let titleLabel:UILabel = {
-       let label = UILabel()
-        label.tintColor = .black
-        label.font = .systemFont(ofSize: 24, weight: .bold)
-        label.text = "DAY 10"
-        return label
-    }()
+    let labelCoverView = UIView().then {
+        $0.backgroundColor = .gray
+        $0.layer.masksToBounds = true
+        $0.layer.cornerRadius = 2
+    }
     
-     let createdDate:UILabel = {
-       let label = UILabel()
-        label.tintColor = .black
-        label.font = .systemFont(ofSize: 14, weight: .medium)
-        label.text = "97.04.01"
-        return label
-    }()
+    let titleLabel = UILabel().then {
+        $0.text = "축제축제"
+        $0.textAlignment = .center
+        $0.font = .systemFont(ofSize: 11, weight: .light)
+    }
     
-     let postText:UITextView = {
-        let textView = UITextView()
-        textView.font = .systemFont(ofSize: 14, weight: .regular)
-        textView.text = "오늘이 드디어 스위스 여행 마지막 날. 흑흑 슬프다. 하지만 오늘도 스위스의 하늘은 정말 너무 예쁘다. 다시 또 올 수 있기를 :)"
-        textView.tintColor = .lineColor
-        textView.isEditable = false
-        return textView
-    }()
+    let schoolNameLabel = UILabel().then {
+        $0.text = "성신여대"
+        $0.backgroundColor = .clear
+        $0.font = .systemFont(ofSize: 13, weight: .light)
+    }
+    
+    let schoolFestivalLabel = UILabel().then {
+        $0.text = "성신여대 2022 대동제"
+        $0.backgroundColor = .clear
+        $0.font = .systemFont(ofSize: 16, weight: .bold)
+    }
   
     override init(frame: CGRect) {
         super.init(frame: frame)
-        self.addSubview(titleLabel)
-        self.addSubview(createdDate)
-        self.addSubview(postText)
     }
     
     required init?(coder: NSCoder) {
@@ -52,25 +50,33 @@ class CoverView: UIView {
     
     
     private func configureUI() {
+        addSubview(labelCoverView)
+        labelCoverView.addSubview(titleLabel)
+        addSubview(schoolNameLabel)
+        addSubview(schoolFestivalLabel)
+        
         titleLabel.snp.makeConstraints { make in
-            make.top.equalToSuperview().inset(22)
-            make.left.equalToSuperview().inset(18)
-            make.right.equalToSuperview().inset(190)
-            make.height.equalTo(20)
+            make.center.equalToSuperview()
+            titleLabel.sizeToFit()
         }
         
-        createdDate.snp.makeConstraints { make in
-            make.left.equalTo(titleLabel.snp.left)
-            make.right.equalTo(titleLabel.snp.right)
-            make.top.equalTo(titleLabel.snp.bottom).offset(8)
-            make.height.equalTo(18)
+        labelCoverView.snp.makeConstraints { make in
+            make.top.equalToSuperview().inset(10)
+            make.leading.equalToSuperview().inset(18)
+            make.height.equalTo(titleLabel.intrinsicContentSize.height + 8)
+            make.width.equalTo(titleLabel.intrinsicContentSize.width + 16)
         }
         
-        postText.snp.makeConstraints { make in
-            make.left.equalToSuperview().inset(18)
-            make.right.equalToSuperview().inset(40)
-            make.top.equalTo(createdDate.snp.bottom).offset(12)
-            make.bottom.equalToSuperview().inset(12)
+        schoolNameLabel.snp.makeConstraints { make in
+            make.top.equalTo(labelCoverView.snp.bottom).offset(6)
+            make.leading.equalToSuperview().inset(18)
+            schoolNameLabel.sizeToFit()
+        }
+        
+        schoolFestivalLabel.snp.makeConstraints { make in
+            make.top.equalTo(schoolNameLabel.snp.bottom).offset(6)
+            make.leading.equalToSuperview().inset(18)
+            schoolFestivalLabel.sizeToFit()
         }
     }
 }

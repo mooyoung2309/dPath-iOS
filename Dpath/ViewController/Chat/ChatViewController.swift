@@ -27,6 +27,7 @@ class ChatViewController: UIViewController {
         $0.separatorStyle = .none
         $0.rowHeight = 100
     }
+    
     var messageView = UIView().then {
         $0.backgroundColor = UIColor.red
     }

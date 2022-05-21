@@ -9,14 +9,18 @@ import UIKit
 import FSPagerView
 import SnapKit
 
-class HomeCardViewController:UIViewController {
+class HomeCardViewController:BasicViewController {
     
     let selfView = HomeCardView()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         configure()
-        print("tesst")
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.tabBarController?.tabBar.isHidden = false
     }
     
     private func configure() {
@@ -51,7 +55,6 @@ extension HomeCardViewController: FSPagerViewDelegate,FSPagerViewDataSource  {
     }
     
     func pagerView(_ pagerView: FSPagerView, didSelectItemAt index: Int) {
-        print(index)
         moveToNextNav()
     }
 }

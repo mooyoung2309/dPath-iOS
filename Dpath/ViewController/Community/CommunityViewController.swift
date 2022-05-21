@@ -8,7 +8,7 @@
 import UIKit
 import Then
 
-class CommunityViewController: UIViewController {
+class CommunityViewController: BasicViewController {
     
     var postTableView = UITableView().then {
         $0.register(PostTableViewCell.self, forCellReuseIdentifier: PostTableViewCell.identifier)
@@ -20,10 +20,14 @@ class CommunityViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .orange
         setView()
         setViewAdaptor()
         updatePostTableView(posts: ["테스트 1", "테스트 2", "테스트 3", "테스트 4", "테스트 5", "테스트 6", "테스트 7"])
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.tabBarController?.tabBar.isHidden = false
     }
     
     func updatePostTableView(posts: [String]) {

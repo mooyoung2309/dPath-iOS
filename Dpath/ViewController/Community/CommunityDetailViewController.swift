@@ -24,8 +24,14 @@ class CommunityDetailViewController: UIViewController {
         self.postId = postId
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.tabBarController?.tabBar.isHidden = true 
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.backgroundColor = .white
         configureUI()
         setBind()
     }
@@ -42,7 +48,8 @@ class CommunityDetailViewController: UIViewController {
         selfView.bottomView.chatOpenButton.rx.tap
             .asDriver()
             .drive(onNext: {
-                print("go next page")
+                let vc = ChatViewController()
+                self.navigationController?.pushViewController(vc, animated: true)
             }).disposed(by: disposeBag)
     }
 }

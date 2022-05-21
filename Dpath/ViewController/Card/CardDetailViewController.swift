@@ -10,7 +10,7 @@ import Then
 import RxSwift
 import RxCocoa
 
-class CardDetailViewController: UIViewController {
+class CardDetailViewController: BasicViewController {
     
     let disposeBag = DisposeBag()
     let selfView = CardDetailView()
@@ -22,6 +22,10 @@ class CardDetailViewController: UIViewController {
         setBind()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.tabBarController?.tabBar.isHidden = true
+    }
     
     private func configure() {
         view.addSubview(selfView)
@@ -36,7 +40,8 @@ class CardDetailViewController: UIViewController {
         selfView.bottomButton.rx.tap
             .asDriver()
             .drive(onNext: {
-                print("go to next page")
+               let vc = PostViewController()
+               self.navigationController?.pushViewController(vc, animated: true)
             }).disposed(by: disposeBag)
     }
  }

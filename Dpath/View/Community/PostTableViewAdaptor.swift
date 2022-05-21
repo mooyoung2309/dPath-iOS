@@ -38,8 +38,8 @@ class PostTableViewAdaptor: NSObject, UITableViewDelegate, UITableViewDataSource
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         Log(indexPath)
         if let communityVC = superVC as? CommunityViewController {
-//            let communityDetailVC = CommunityDetailViewController(postId: Int)
-//            communityVC.navigationController?.pushViewController(communityDetailVC, animated: true)
+           let communityDetailVC = CommunityDetailViewController(postId: 1)
+           communityVC.navigationController?.pushViewController(communityDetailVC, animated: true)
         }
     }
 }

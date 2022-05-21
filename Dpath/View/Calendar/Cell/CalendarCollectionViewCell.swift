@@ -14,30 +14,16 @@ class CalendarCollectionViewCell: UICollectionViewCell {
     var circleStackView = UIStackView().then {
         $0.axis = .horizontal
         $0.spacing = 2
-        $0.alignment = .center
+//        $0.distribution = .equalCentering
+//        $0.alignment = .center
     }
-    var buyCircleView = UIView() .then {
-        $0.backgroundColor = UIColor.pink
-        $0.layer.cornerRadius = 3
-    }
-    var sellCircleView = UIView().then {
-        $0.backgroundColor = UIColor.mint
-        $0.layer.cornerRadius = 3
-    }
-    var memoCirlceView = UIView().then {
-        $0.backgroundColor = .black
-        $0.layer.cornerRadius = 3
-    }
-    var divider = UIView().then {
-        $0.backgroundColor = .lightGray
-    }
-    
     var dateLabel = UILabel().then {
         $0.font = .systemFont(ofSize: 10, weight: .regular)
         $0.textAlignment = .center
         $0.layer.cornerRadius = 10
         $0.layer.masksToBounds = true
     }
+    var calendarItem: [String] = ["11", "22", "232"]
     
     let dateFormatter = DateFormatter()
     
@@ -57,6 +43,11 @@ class CalendarCollectionViewCell: UICollectionViewCell {
     
     func update(date: Int) {
         dateLabel.text = String(date)
+        
+        for item in calendarItem {
+            let circleTagView = CircleTagView(color: UIColor.random())
+            circleStackView.addArrangedSubview(circleTagView)
+        }
     }
 }
 
@@ -64,28 +55,25 @@ extension CalendarCollectionViewCell {
     func setView() {
         backgroundColor = .white
         
-        addSubview(divider)
         addSubview(dateLabel)
         addSubview(circleStackView)
         
-        divider.translatesAutoresizingMaskIntoConstraints = false
         dateLabel.translatesAutoresizingMaskIntoConstraints = false
         circleStackView.translatesAutoresizingMaskIntoConstraints = false
         
+        
         NSLayoutConstraint.activate([
-            divider.topAnchor.constraint(equalTo: topAnchor),
-            divider.leadingAnchor.constraint(equalTo: leadingAnchor),
-            divider.trailingAnchor.constraint(equalTo: trailingAnchor),
-            divider.heightAnchor.constraint(equalToConstant: 0.18),
-            
-            dateLabel.topAnchor.constraint(equalTo: divider.bottomAnchor),
+            dateLabel.topAnchor.constraint(equalTo: topAnchor),
             dateLabel.centerXAnchor.constraint(equalTo: centerXAnchor),
             dateLabel.widthAnchor.constraint(equalToConstant: 20),
             dateLabel.heightAnchor.constraint(equalToConstant: 20),
             
             circleStackView.topAnchor.constraint(equalTo: dateLabel.bottomAnchor),
+//            circleStackView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 10),
+//            circleStackView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -10),
             circleStackView.centerXAnchor.constraint(equalTo: centerXAnchor),
-            circleStackView.heightAnchor.constraint(equalToConstant: 10),
+//            circleStackView.widthAnchor.constraint(equalToConstant: 30),
+//            circleStackView.heightAnchor.constraint(equalToConstant: 10),
         ])
     }
 }

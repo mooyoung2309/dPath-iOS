@@ -20,6 +20,14 @@ extension UIColor {
         )
     }
     
+    static func random () -> UIColor {
+        return UIColor(
+          red: CGFloat.random(in: 0...1),
+          green: CGFloat.random(in: 0...1),
+          blue: CGFloat.random(in: 0...1),
+          alpha: 1.0)
+      }
+    
     // MARK: 메인 테마 색 또는 자주 쓰는 색을 정의
     // ex. label.textColor = .mainOrange
     class var mainBackgroundColor: UIColor { UIColor(hex: 0xEEEEEE) }

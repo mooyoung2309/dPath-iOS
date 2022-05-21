@@ -10,7 +10,7 @@ import UIKit
 class BottomSheetView: UIView {
     var divider = UIView()
     var titleLabel = UILabel().then {
-        $0.font = .systemFont(ofSize: 20)
+        $0.font = .systemFont(ofSize: 20, weight: .semibold)
         $0.text = "4.4월"
     }
     var hideButton = UIButton().then {

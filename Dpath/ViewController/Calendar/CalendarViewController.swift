@@ -18,6 +18,11 @@ class CalendarViewController: UIViewController, UIScrollViewDelegate {
         $0.isPagingEnabled = true
         $0.showsHorizontalScrollIndicator = false
     }
+    var monthLabel = UILabel().then {
+        $0.font = .systemFont(ofSize: 35, weight: .semibold)
+        $0.text = "2022.4"
+    }
+    var weekLabelView = WeekLabelView()
     var datePicker = UIDatePicker().then {
             $0.timeZone = NSTimeZone.local
             $0.locale = Locale(identifier: "ko_KR")
@@ -66,6 +71,7 @@ class CalendarViewController: UIViewController, UIScrollViewDelegate {
         setView()
         setBind()
         updateCalendarCollectionView()
+        navigationController?.isNavigationBarHidden = true
     }
     
     func updateCalendarCollectionView() {
@@ -100,6 +106,9 @@ extension CalendarViewController {
     }
 
     func setView() {
+        view.addSubview(monthLabel)
+        view.addSubview(datePicker)
+        view.addSubview(weekLabelView)
         view.addSubview(scrollView)
         view.addSubview(bottomSheet)
         scrollView.addSubview(prevCalendarCollectionView)
@@ -107,6 +116,9 @@ extension CalendarViewController {
         scrollView.addSubview(nextCalendarCollectionView)
         bottomSheet.addSubview(festivalTableView)
 
+        monthLabel.translatesAutoresizingMaskIntoConstraints = false
+        datePicker.translatesAutoresizingMaskIntoConstraints = false
+        weekLabelView.translatesAutoresizingMaskIntoConstraints = false
         scrollView.translatesAutoresizingMaskIntoConstraints = false
         bottomSheet.translatesAutoresizingMaskIntoConstraints = false
         prevCalendarCollectionView.translatesAutoresizingMaskIntoConstraints = false
@@ -116,11 +128,24 @@ extension CalendarViewController {
 
         scrollViewBottomConstraint = scrollView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor)
         bottomSheetHeightConstraint = bottomSheet.heightAnchor.constraint(equalToConstant: 0)
+        datePickerHeightConstraint = datePicker.heightAnchor.constraint(equalToConstant: 0)
         
         hideBottomSheetView()
         
         NSLayoutConstraint.activate([
-            scrollView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
+            monthLabel.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 10),
+            monthLabel.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 15),
+            
+            datePicker.topAnchor.constraint(equalTo: monthLabel.bottomAnchor),
+            datePicker.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            datePicker.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            datePickerHeightConstraint,
+            
+            weekLabelView.topAnchor.constraint(equalTo: monthLabel.bottomAnchor, constant: 15),
+            weekLabelView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
+            weekLabelView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor),
+            
+            scrollView.topAnchor.constraint(equalTo: weekLabelView.bottomAnchor, constant: 15),
             scrollView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
             scrollView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor),
             scrollViewBottomConstraint,
@@ -180,39 +205,37 @@ extension CalendarViewController {
         scrollViewBottomConstraint.constant = -400
         bottomSheetHeightConstraint.constant = 400
 
+        self.scrollViewBottomConstraint.isActive = true
+        self.bottomSheetHeightConstraint.isActive = true
+        
+//        self.nowCalendarCollectionView.reloadData()
+//        self.prevCalendarCollectionView.reloadData()
+//        self.nextCalendarCollectionView.reloadData()
+        
         UIView.animate(withDuration: 0.25, animations: {
             self.bottomSheet.alpha = 1
-            self.scrollViewBottomConstraint.isActive = true
-            self.bottomSheetHeightConstraint.isActive = true
+            
             self.view.layoutIfNeeded()
             self.nowCalendarCollectionView.performBatchUpdates(nil)
             self.prevCalendarCollectionView.performBatchUpdates(nil)
             self.nextCalendarCollectionView.performBatchUpdates(nil)
-        }, completion: { _ in
-            self.nowCalendarCollectionView.reloadData()
-            self.prevCalendarCollectionView.reloadData()
-            self.nextCalendarCollectionView.reloadData()
-
-            UIView.animate(withDuration: 0.25, animations: {
-                self.nowCalendarCollectionView.performBatchUpdates(nil)
-                self.prevCalendarCollectionView.performBatchUpdates(nil)
-                self.nextCalendarCollectionView.performBatchUpdates(nil)
-            })
-
-            for calendarCollectionViewCell in self.nowCalendarCollectionView.visibleCells {
-                let cell = calendarCollectionViewCell as! CalendarCollectionViewCell
-//                cell.hide()
-            }
         })
+
+        for calendarCollectionViewCell in self.nowCalendarCollectionView.visibleCells {
+            let cell = calendarCollectionViewCell as! CalendarCollectionViewCell
+//                cell.hide()
+        }
     }
 
     func hideBottomSheetView() {
         scrollViewBottomConstraint.constant = 0
         bottomSheetHeightConstraint.constant = 30
+        
+        self.scrollViewBottomConstraint.isActive = true
+        self.bottomSheetHeightConstraint.isActive = true
+        
         UIView.animate(withDuration: 0.25, animations: {
             self.bottomSheet.alpha = 0
-            self.scrollViewBottomConstraint.isActive = true
-            self.bottomSheetHeightConstraint.isActive = true
             self.view.layoutIfNeeded()
             self.nowCalendarCollectionView.performBatchUpdates(nil)
             self.prevCalendarCollectionView.performBatchUpdates(nil)

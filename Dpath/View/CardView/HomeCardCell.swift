@@ -10,7 +10,7 @@ import FSPagerView
 import SnapKit
 
 class HomeCardCell:FSPagerViewCell {
-    static let Identifiler = "SlidingCell"
+    static let Identifiler = "HomeCardCell"
     
     private let slidingImageView:UIImageView = {
        let imageView = UIImageView(image: UIImage(named: "crop"))

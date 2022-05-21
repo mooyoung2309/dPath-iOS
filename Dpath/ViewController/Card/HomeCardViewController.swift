@@ -19,15 +19,14 @@ class HomeCardViewController:UIViewController {
 }
 
 
-extension HomeCardViewController: FSPagerViewDelegate,FSPagerViewDataSource  {
-    
-    func numberOfItems(in pagerView: FSPagerView) -> Int {
-        10
-    }
-    
-    func pagerView(_ pagerView: FSPagerView, cellForItemAt index: Int) -> FSPagerViewCell {
-        
-    }
-    
-    
-}
+//extension HomeCardViewController: FSPagerViewDelegate,FSPagerViewDataSource  {
+//
+//    func numberOfItems(in pagerView: FSPagerView) -> Int {
+//        10
+//    }
+//
+//    func pagerView(_ pagerView: FSPagerView, cellForItemAt index: Int) -> FSPagerViewCell {
+//
+//    }
+//
+//}

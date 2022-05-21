@@ -28,7 +28,7 @@ DerivedData/
 *.perspectivev3
 !default.perspectivev3
 xcuserdata/
-
+*.pbxproj binary merge=union
 ## Other
 *.moved-aside
 *.xccheckout

@@ -5,9 +5,8 @@
 //  Created by sangheon on 2022/05/21.
 //
 
-import Foundation
 import UIKit
-
+import FSPagerView
 
 class HomeCardViewController:UIViewController {
     
@@ -16,5 +15,21 @@ class HomeCardViewController:UIViewController {
         super.viewDidLoad()
         
     }
+    
+    
+    
+}
+
+
+extension HomeCardViewController: FSPagerViewDelegate,FSPagerViewDataSource  {
+    
+    func numberOfItems(in pagerView: FSPagerView) -> Int {
+        10
+    }
+    
+    func pagerView(_ pagerView: FSPagerView, cellForItemAt index: Int) -> FSPagerViewCell {
+        <#code#>
+    }
+    
     
 }

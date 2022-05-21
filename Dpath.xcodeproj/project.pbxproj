@@ -27,6 +27,9 @@
 		B64E60762838B6370077FCDA /* IndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B64E60752838B6370077FCDA /* IndicatorView.swift */; };
 		B64E60782838B6490077FCDA /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B64E60772838B6490077FCDA /* NetworkManager.swift */; };
 		B64E60872838CF240077FCDA /* HomeCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B64E60862838CF240077FCDA /* HomeCardView.swift */; };
+		B64E60892838D0FD0077FCDA /* BasicView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B64E60882838D0FD0077FCDA /* BasicView.swift */; };
+		B64E608C2838D26C0077FCDA /* HomeCardCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B64E608B2838D26C0077FCDA /* HomeCardCell.swift */; };
+		B64E608E2838D2EE0077FCDA /* CoverView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B64E608D2838D2EE0077FCDA /* CoverView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -53,6 +56,9 @@
 		B64E60752838B6370077FCDA /* IndicatorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IndicatorView.swift; sourceTree = "<group>"; };
 		B64E60772838B6490077FCDA /* NetworkManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		B64E60862838CF240077FCDA /* HomeCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCardView.swift; sourceTree = "<group>"; };
+		B64E60882838D0FD0077FCDA /* BasicView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicView.swift; sourceTree = "<group>"; };
+		B64E608B2838D26C0077FCDA /* HomeCardCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCardCell.swift; sourceTree = "<group>"; };
+		B64E608D2838D2EE0077FCDA /* CoverView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoverView.swift; sourceTree = "<group>"; };
 		E731B4E151B6361AEE990CA3 /* Pods-Dpath.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Dpath.debug.xcconfig"; path = "Target Support Files/Pods-Dpath/Pods-Dpath.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -181,9 +187,20 @@
 		B64E60852838CF0E0077FCDA /* View */ = {
 			isa = PBXGroup;
 			children = (
-				B64E60862838CF240077FCDA /* HomeCardView.swift */,
+				B64E60882838D0FD0077FCDA /* BasicView.swift */,
+				B64E608A2838D2160077FCDA /* CardView */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		B64E608A2838D2160077FCDA /* CardView */ = {
+			isa = PBXGroup;
+			children = (
+				B64E60862838CF240077FCDA /* HomeCardView.swift */,
+				B64E608B2838D26C0077FCDA /* HomeCardCell.swift */,
+				B64E608D2838D2EE0077FCDA /* CoverView.swift */,
+			);
+			path = CardView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -303,6 +320,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				70EEB12E2838CAAE00F21C41 /* CalendarViewController.swift in Sources */,
+				B64E608C2838D26C0077FCDA /* HomeCardCell.swift in Sources */,
+				B64E608E2838D2EE0077FCDA /* CoverView.swift in Sources */,
 				B64E60782838B6490077FCDA /* NetworkManager.swift in Sources */,
 				70EEB1332838CE8600F21C41 /* TmpViewController.swift in Sources */,
 				B64E60732838AF740077FCDA /* UIVIew.swift in Sources */,
@@ -317,6 +336,7 @@
 				B64E605B2838AE690077FCDA /* SceneDelegate.swift in Sources */,
 				B64E60762838B6370077FCDA /* IndicatorView.swift in Sources */,
 				B64E60722838AF740077FCDA /* UIViewController.swift in Sources */,
+				B64E60892838D0FD0077FCDA /* BasicView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

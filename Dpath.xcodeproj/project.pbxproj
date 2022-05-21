@@ -26,6 +26,7 @@
 		B64E60742838AF740077FCDA /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = B64E60702838AF730077FCDA /* Date.swift */; };
 		B64E60762838B6370077FCDA /* IndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B64E60752838B6370077FCDA /* IndicatorView.swift */; };
 		B64E60782838B6490077FCDA /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B64E60772838B6490077FCDA /* NetworkManager.swift */; };
+		B64E60872838CF240077FCDA /* HomeCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B64E60862838CF240077FCDA /* HomeCardView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -51,6 +52,7 @@
 		B64E60702838AF730077FCDA /* Date.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
 		B64E60752838B6370077FCDA /* IndicatorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IndicatorView.swift; sourceTree = "<group>"; };
 		B64E60772838B6490077FCDA /* NetworkManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		B64E60862838CF240077FCDA /* HomeCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCardView.swift; sourceTree = "<group>"; };
 		E731B4E151B6361AEE990CA3 /* Pods-Dpath.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Dpath.debug.xcconfig"; path = "Target Support Files/Pods-Dpath/Pods-Dpath.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -86,6 +88,7 @@
 		70DAC4D52838C4BD00A8E169 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				B64E60842838CEED0077FCDA /* Card */,
 				70EEB12F2838CBCF00F21C41 /* Community */,
 				70DAC4D92838C4F200A8E169 /* Calendar */,
 				70DAC4D82838C4ED00A8E169 /* Root */,
@@ -139,6 +142,7 @@
 		B64E60572838AE680077FCDA /* Dpath */ = {
 			isa = PBXGroup;
 			children = (
+				B64E60852838CF0E0077FCDA /* View */,
 				70DAC4D52838C4BD00A8E169 /* ViewController */,
 				70DAC4D12838C43D00A8E169 /* Base.lproj */,
 				70DAC4CF2838C43000A8E169 /* Base */,
@@ -146,7 +150,6 @@
 				B64E60582838AE680077FCDA /* AppDelegate.swift */,
 				B64E605A2838AE690077FCDA /* SceneDelegate.swift */,
 				B64E605C2838AE690077FCDA /* ViewController.swift */,
-				70DAC4D32838C44300A8E169 /* HomeCardViewController.swift */,
 				B64E60612838AE6C0077FCDA /* Assets.xcassets */,
 				B64E60632838AE6C0077FCDA /* LaunchScreen.storyboard */,
 				B64E60662838AE6C0077FCDA /* Info.plist */,
@@ -165,6 +168,22 @@
 				B64E60772838B6490077FCDA /* NetworkManager.swift */,
 			);
 			path = Extension;
+			sourceTree = "<group>";
+		};
+		B64E60842838CEED0077FCDA /* Card */ = {
+			isa = PBXGroup;
+			children = (
+				70DAC4D32838C44300A8E169 /* HomeCardViewController.swift */,
+			);
+			path = Card;
+			sourceTree = "<group>";
+		};
+		B64E60852838CF0E0077FCDA /* View */ = {
+			isa = PBXGroup;
+			children = (
+				B64E60862838CF240077FCDA /* HomeCardView.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -288,6 +307,7 @@
 				70EEB1332838CE8600F21C41 /* TmpViewController.swift in Sources */,
 				B64E60732838AF740077FCDA /* UIVIew.swift in Sources */,
 				B64E605D2838AE690077FCDA /* ViewController.swift in Sources */,
+				B64E60872838CF240077FCDA /* HomeCardView.swift in Sources */,
 				70DAC4D72838C4C800A8E169 /* RootViewController.swift in Sources */,
 				70DAC4D42838C44300A8E169 /* HomeCardViewController.swift in Sources */,
 				B64E60742838AF740077FCDA /* Date.swift in Sources */,

@@ -17,6 +17,7 @@ class CalendarViewModel: ViewModel {
     
     struct Input {
         let date = BehaviorSubject(value: Date())
+        let isDateLabelClick = PublishSubject<Bool>()
         let isClickedHeaderView = BehaviorSubject(value: false)
         let isClickedCalendarCell = BehaviorSubject(value: false)
         let isBottonSheetHideButtonClick = PublishSubject<Bool>()
@@ -25,6 +26,10 @@ class CalendarViewModel: ViewModel {
     struct Output {
         let date = BehaviorRelay(value: Date())
         let bottomSheetHide = BehaviorRelay(value: true)
+        let datePickerOpen = BehaviorRelay(value: false)
+        let prevDates = BehaviorRelay(value: [Date()])
+        let nowDates = BehaviorRelay(value: [Date()])
+        let nextDates = BehaviorRelay(value: [Date()])
 //        let prevCalendarItems = BehaviorRelay(value: [CalendarItem()])
 //        let nowCalendarItems = BehaviorRelay(value: [CalendarItem()])
 //        let nextCalendarItems = BehaviorRelay(value: [CalendarItem()])
@@ -44,6 +49,22 @@ extension CalendarViewModel {
     func setBind() {
         input.isBottonSheetHideButtonClick
             .bind(to: output.bottomSheetHide)
+            .disposed(by: disposeBag)
+        
+        input.isDateLabelClick
+            .bind(to: output.datePickerOpen)
+            .disposed(by: disposeBag)
+        
+        input.date
+            .withUnretained(self)
+            .bind { owner, date in
+                Log("date 변경됨")
+                owner.output.datePickerOpen.accept(false)
+                owner.output.date.accept(date)
+                owner.output.prevDates.accept(date.plusPeriod(Period.month, interval: -1).getDatesOfMonth())
+                owner.output.nowDates.accept(date.getDatesOfMonth())
+                owner.output.nextDates.accept(date.plusPeriod(Period.month, interval: 1).getDatesOfMonth())
+            }
             .disposed(by: disposeBag)
         
 //        input.date

@@ -12,7 +12,9 @@ class ChatViewController: UIViewController {
     var noticeView = UIView().then {
         $0.backgroundColor = UIColor.white
     }
-    var noticeImageView = UIImageView(image: UIImage(systemName: "calendar"))
+    var noticeImageView = UIImageView(image: UIImage(named: ImageName.pin)).then {
+        $0.tintColor = UIColor.black
+    }
     var noticeLabel = UILabel().then {
         $0.text = "반갑습니다. 5월21일 성신여대 대동제에 함께 갈 2명을 모집 중 입니다."
         $0.textColor = UIColor.black
@@ -24,7 +26,6 @@ class ChatViewController: UIViewController {
         $0.register(MyChatTableViewCell.self, forCellReuseIdentifier: MyChatTableViewCell.identifier)
         $0.separatorStyle = .none
         $0.rowHeight = 100
-        
     }
     var messageView = UIView().then {
         $0.backgroundColor = UIColor.red

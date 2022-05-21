@@ -41,8 +41,8 @@ class CalendarCollectionViewCell: UICollectionViewCell {
         circleStackView.arrangedSubviews.forEach { $0.removeFromSuperview() }
     }
     
-    func update(date: Int) {
-        dateLabel.text = String(date)
+    func update(date: Date) {
+        dateLabel.text = date.dayString
         
         for item in calendarItem {
             let circleTagView = CircleTagView(color: UIColor.random())

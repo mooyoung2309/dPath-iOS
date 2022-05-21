@@ -8,6 +8,7 @@
 import UIKit
 import RxSwift
 import RxCocoa
+import RxGesture
 import Then
 
 class CalendarViewController: UIViewController, UIScrollViewDelegate {
@@ -19,8 +20,8 @@ class CalendarViewController: UIViewController, UIScrollViewDelegate {
         $0.showsHorizontalScrollIndicator = false
     }
     var monthLabel = UILabel().then {
-        $0.font = .systemFont(ofSize: 35, weight: .semibold)
-        $0.text = "2022.4"
+        $0.font = .systemFont(ofSize: 20, weight: .semibold)
+        $0.text = "2022.5"
     }
     var weekLabelView = WeekLabelView()
     var datePicker = UIDatePicker().then {
@@ -109,7 +110,6 @@ extension CalendarViewController {
 
     func setView() {
         view.addSubview(monthLabel)
-        view.addSubview(datePicker)
         view.addSubview(weekLabelView)
         view.addSubview(scrollView)
         view.addSubview(bottomSheet)
@@ -117,6 +117,9 @@ extension CalendarViewController {
         scrollView.addSubview(nowCalendarCollectionView)
         scrollView.addSubview(nextCalendarCollectionView)
         bottomSheet.addSubview(festivalTableView)
+        view.addSubview(datePicker)
+        
+        datePicker.backgroundColor = .white
 
         monthLabel.translatesAutoresizingMaskIntoConstraints = false
         datePicker.translatesAutoresizingMaskIntoConstraints = false
@@ -184,6 +187,56 @@ extension CalendarViewController {
     }
     
     func setBind() {
+        bottomSheet.hideButton.rx.tap
+            .map { true }
+            .bind(to: viewModel.input.isBottonSheetHideButtonClick)
+            .disposed(by: disposeBag)
+        
+        monthLabel.rx.tapGesture()
+            .withUnretained(self)
+            .bind { owner, tap in
+                if tap.state.rawValue == 3 {
+                    owner.viewModel.input.isDateLabelClick.onNext(true)
+                }
+            }
+            .disposed(by: disposeBag)
+        
+        datePicker.rx.date
+            .bind(to: viewModel.input.date)
+            .disposed(by: disposeBag)
+        
+        viewModel.output.date
+            .withUnretained(self)
+            .bind { owner, date in
+                Log(date)
+                owner.monthLabel.text = date.dateString
+            }
+            .disposed(by: disposeBag)
+        
+        viewModel.output.nowDates
+            .withUnretained(self)
+            .bind { owner, dates in
+                owner.nowCalendarCollectionViewAdaptor.update(dates: dates)
+                owner.nowCalendarCollectionView.reloadData()
+            }
+            .disposed(by: disposeBag)
+        
+        viewModel.output.prevDates
+            .withUnretained(self)
+            .bind { owner, dates in
+                owner.prevCalendarCollectionViewAdaptor.update(dates: dates)
+                owner.prevCalendarCollectionView.reloadData()
+            }
+            .disposed(by: disposeBag)
+        
+        viewModel.output.nextDates
+            .withUnretained(self)
+            .bind { owner, dates in
+                owner.nextCalendarCollectionViewAdaptor.update(dates: dates)
+                owner.nextCalendarCollectionView.reloadData()
+            }
+            .disposed(by: disposeBag)
+        
         viewModel.output.bottomSheetHide
             .withUnretained(self)
             .bind { owner, bool in
@@ -195,24 +248,42 @@ extension CalendarViewController {
             }
             .disposed(by: disposeBag)
         
-        bottomSheet.hideButton.rx.tap
-            .map { true }
-            .bind(to: viewModel.input.isBottonSheetHideButtonClick)
+        viewModel.output.datePickerOpen
+            .withUnretained(self)
+            .bind { owner, bool in
+                if bool {
+                    owner.showDatePicker()
+                } else {
+                    owner.hideDatePiecker()
+                }
+            }
             .disposed(by: disposeBag)
     }
 }
 
 extension CalendarViewController {
+    func showDatePicker() {
+        datePickerHeightConstraint.constant = 290
+        UIView.animate(withDuration: 0.25, animations: {
+            self.datePickerHeightConstraint.isActive = true
+            self.view.layoutIfNeeded()
+        })
+    }
+    
+    func hideDatePiecker() {
+        datePickerHeightConstraint.constant = 0
+        UIView.animate(withDuration: 0.25, animations: {
+            self.datePickerHeightConstraint.isActive = true
+            self.view.layoutIfNeeded()
+        })
+    }
+    
     func showBottomSheetView() {
         scrollViewBottomConstraint.constant = -400
         bottomSheetHeightConstraint.constant = 400
 
         self.scrollViewBottomConstraint.isActive = true
         self.bottomSheetHeightConstraint.isActive = true
-        
-//        self.nowCalendarCollectionView.reloadData()
-//        self.prevCalendarCollectionView.reloadData()
-//        self.nextCalendarCollectionView.reloadData()
         
         UIView.animate(withDuration: 0.25, animations: {
             self.bottomSheet.alpha = 1
@@ -251,6 +322,13 @@ extension CalendarViewController {
     }
 
     func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+        if scrollView.contentOffset.x > scrollView.frame.width {
+            self.viewModel.input.date.onNext(try! self.viewModel.input.date.value().plusPeriod(Period.month, interval: 1))
+        } else if scrollView.contentOffset.x < scrollView.frame.width {
+            self.viewModel.input.date.onNext(try! self.viewModel.input.date.value().plusPeriod(Period.month, interval: -1))
+        } else {
+            
+        }
         scrollView.contentOffset.x = scrollView.frame.width
     }
 }

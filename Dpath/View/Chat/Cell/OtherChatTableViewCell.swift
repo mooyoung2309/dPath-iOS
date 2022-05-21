@@ -14,7 +14,7 @@ class OtherChatTableViewCell: UITableViewCell {
     var circleView = UIView().then {
         $0.clipsToBounds = true
         $0.layer.cornerRadius = 16
-        $0.backgroundColor = UIColor.mint
+        $0.backgroundColor = UIColor(hex: 0xEAEAEA)
     }
     var nameLabel = UILabel().then {
         $0.text = "닉네임"

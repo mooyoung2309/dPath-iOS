@@ -20,4 +20,5 @@ struct ImageName {
     static let sync = "sync"
     static let thumbUp = "thumb_up"
     static let date = "date_range"
+    static let pin = "push_pin"
 }

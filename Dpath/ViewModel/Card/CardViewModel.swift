@@ -6,7 +6,27 @@
 //
 
 import Foundation
+import RxSwift
 
 class CardViewModel:BasicViewModel {
+    
+    let festivalData = PublishSubject<FestivalResponse>()
+    //let currentFestivalData:FestivalResponse?
+    let apiManager = APIManager()
+    
+    func fetchData() {
+        apiManager.fetchFestival(idx: 1) { response in
+            switch response {
+            case .success(let data):
+                print(data)
+            case .failure(let error):
+                print(error)
+            }
+        }
+    }
+    
+    override init() {
+        
+    }
     
 }

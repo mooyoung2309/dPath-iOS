@@ -11,6 +11,7 @@ pod 'Alamofire'
 pod 'RxGesture'
 pod 'FSPagerView'
 pod 'SnapKit'
+pod 'Then'
   # Pods for Dpath
 
 end

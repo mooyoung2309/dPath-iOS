@@ -8,9 +8,10 @@
 import UIKit
 
 class CardView: BasicView {
-    //image: UIImage(named: "crop")
-    let cardImageView = UIImageView().then {
-        $0.backgroundColor = .blue
+    
+    let cardImageView = UIImageView(image:UIImage(named: ImageName.Rectangle)).then {
+        $0.clipsToBounds = true
+        $0.contentMode = .scaleAspectFill
     }
     
     let labelCoverView = UIView().then {
@@ -28,11 +29,10 @@ class CardView: BasicView {
     }
     
     let likeButton = UIButton().then {
-       // $0.setImage(UIImage(named:""), for: .normal)
-        $0.backgroundColor = .red
+        $0.setImage(UIImage(named: ImageName.thumbUp), for: .normal)
     }
     
-    private let coverView = CoverView()
+    let coverView = CoverView()
     
     override func configureUI() {
         super.configureUI()
@@ -41,6 +41,7 @@ class CardView: BasicView {
         addSubview(labelCoverView)
         labelCoverView.addSubview(dayCountLabel)
         addSubview(likeButton)
+        
         
         cardImageView.snp.makeConstraints { make in
 //            make.leading.trailing.top.equalToSuperview()
@@ -70,7 +71,7 @@ class CardView: BasicView {
             make.bottom.equalTo(coverView.snp.top).offset(-10)
             make.height.width.equalTo(40)
         }
+  
     }
-    
 
 }

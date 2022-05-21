@@ -13,7 +13,7 @@ class HomeCardView:BasicView {
     
     let cardTableView:FSPagerView = {
         let table = FSPagerView()
-        table.itemSize = CGSize(width: 292, height: 580)
+        table.itemSize = CGSize(width: 292, height: 490)
         table.register(HomeCardCell.self, forCellWithReuseIdentifier:HomeCardCell.Identifiler )
         table.transformer = FSPagerViewTransformer(type: .linear)
         table.isInfinite = true

@@ -8,7 +8,9 @@
 import UIKit
 
 class CommunityDetailViewController: UIViewController {
+    
     var postId: Int!
+    let selfView = CommunityDetailView()
     
     required init?(coder: NSCoder) {
         super.init(coder: coder)
@@ -21,6 +23,14 @@ class CommunityDetailViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = UIColor.mint
+        configureUI()
+    }
+    
+    private func configureUI() {
+        view.addSubview(selfView)
+        selfView.snp.makeConstraints { make in
+            make.leading.trailing.bottom.equalToSuperview()
+            make.top.equalTo(view.safeAreaLayoutGuide.snp.top)
+        }
     }
 }

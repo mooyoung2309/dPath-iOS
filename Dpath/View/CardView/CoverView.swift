@@ -15,9 +15,9 @@ class CoverView: UIView {
     }
 
     let labelCoverView = UIView().then {
-        $0.backgroundColor = .gray
+        $0.backgroundColor = .whiteRedColor
         $0.layer.masksToBounds = true
-        $0.layer.cornerRadius = 2
+        $0.layer.cornerRadius = 6
     }
     
     let titleLabel = UILabel().then {
@@ -43,6 +43,14 @@ class CoverView: UIView {
         $0.textColor = .black
         $0.font = .systemFont(ofSize: 12, weight: .light)
     }
+    
+    let updateDateLabel = UILabel().then {
+        $0.text = "2020-00-00"
+        $0.textColor = .black
+        $0.font = .systemFont(ofSize: 12, weight: .light)
+        $0.isHidden = true
+    }
+
   
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -57,7 +65,6 @@ class CoverView: UIView {
         configureUI()
     }
     
-    
     private func configureUI() {
         addSubview(backGroundView)
         backGroundView.addSubview(labelCoverView)
@@ -65,6 +72,7 @@ class CoverView: UIView {
         backGroundView.addSubview(schoolNameLabel)
         backGroundView.addSubview(schoolFestivalLabel)
         backGroundView.addSubview(dateLabel)
+        backGroundView.addSubview(updateDateLabel)
         
         backGroundView.snp.makeConstraints { make in
             make.edges.equalToSuperview()
@@ -99,6 +107,13 @@ class CoverView: UIView {
             make.centerY.equalTo(titleLabel)
             dateLabel.sizeToFit()
         }
+        
+        updateDateLabel.snp.makeConstraints { make in
+            make.centerY.equalTo(titleLabel)
+            make.leading.equalTo(titleLabel.snp.trailing).offset(14)
+            updateDateLabel.sizeToFit()
+        }
     
     }
+    
 }

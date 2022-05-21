@@ -39,6 +39,7 @@ extension UIColor {
     class var lineColor: UIColor {UIColor(hex: 0xC4C4C4)}
     class var mainColor: UIColor {UIColor(hex: 0x404040)}
     class var toggleColor: UIColor {UIColor(hex: 0x636363)}
+    class var whiteRedColor: UIColor {UIColor(hex: 0xFF7C74)}
     
     static let white = UIColor(red: 255/255, green: 255/255, blue: 255/255, alpha: 1)
     static let red = UIColor(red: 255/255, green: 69/255, blue: 58/255, alpha: 1)

@@ -32,14 +32,14 @@ class RootViewController: UITabBarController {
         let nav4 = UINavigationController(rootViewController: chat)
         let nav5 = UINavigationController(rootViewController: profile)
 
-        nav1.tabBarItem = UITabBarItem(title: "홈", image: UIImage(named: "home"), selectedImage: UIImage(named: "home2"))
-        nav2.tabBarItem = UITabBarItem(title: "일정", image: UIImage(named: "myrecord"), selectedImage: UIImage(named: "myrecord2" ))
-        nav3.tabBarItem = UITabBarItem(title: "커뮤니티", image: UIImage(named: "allrecord"), selectedImage: UIImage(named: "allrecord2" ))
-        nav4.tabBarItem = UITabBarItem(title: "채팅", image: UIImage(named: "mydj"), selectedImage: UIImage(named: "mydj2" ))
-        nav5.tabBarItem = UITabBarItem(title: "프로필", image: UIImage(named: "mypage"), selectedImage: UIImage(named: "mypage2" ))
-        self.tabBar.selectedImageTintColor = .blue
-        UITabBarItem.appearance().setTitleTextAttributes([NSAttributedString.Key.foregroundColor: UIColor.green], for: .normal)
-        UITabBarItem.appearance().setTitleTextAttributes([NSAttributedString.Key.foregroundColor: UIColor.orange], for: .selected)
+        nav1.tabBarItem = UITabBarItem(title: "홈", image: UIImage(named: ImageName.home), selectedImage: UIImage(named: ImageName.home))
+        nav2.tabBarItem = UITabBarItem(title: "일정", image: UIImage(named: ImageName.date), selectedImage: UIImage(named: ImageName.date ))
+        nav3.tabBarItem = UITabBarItem(title: "커뮤니티", image: UIImage(named: ImageName.people), selectedImage: UIImage(named: ImageName.people ))
+        nav4.tabBarItem = UITabBarItem(title: "채팅", image: UIImage(named: ImageName.question), selectedImage: UIImage(named: ImageName.question ))
+        nav5.tabBarItem = UITabBarItem(title: "프로필", image: UIImage(named: ImageName.person), selectedImage: UIImage(named: ImageName.person ))
+        self.tabBar.selectedImageTintColor = .whiteRedColor
+        UITabBarItem.appearance().setTitleTextAttributes([NSAttributedString.Key.foregroundColor: UIColor.gray], for: .normal)
+        UITabBarItem.appearance().setTitleTextAttributes([NSAttributedString.Key.foregroundColor: UIColor.whiteRedColor], for: .selected)
 
         // UINavigationBar.appearance().isTranslucent = false
         UINavigationBar.appearance().backgroundColor = .clear
@@ -47,6 +47,6 @@ class RootViewController: UITabBarController {
         let navs = [nav1, nav2, nav3, nav4, nav5]
         setViewControllers(navs, animated: true)
         // tabBar.isTranslucent = false
-        self.tabBar.backgroundColor = .darkGray
+        self.tabBar.backgroundColor = .white
     }
 }

@@ -22,7 +22,8 @@ struct ImageName {
     static let date = "date_range"
     static let pin = "push_pin"
     static let back = "back"
-    static let logo = "logo"
+    static let logo = "frame"
     static let plus = "plus"
     static let subtract = "subtract"
+    static let login = "login"
 }

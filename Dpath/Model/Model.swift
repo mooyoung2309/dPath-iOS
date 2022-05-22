@@ -19,14 +19,14 @@ struct FestivalResponse: Codable {
 // MARK: - Result
 struct Festival: Codable {
     let festivalIdx: Int
-        let startDate, endDate, univName, location: String
-        let festivalName, themeName: String
-        let imgURL: String
-
-        enum CodingKeys: String, CodingKey {
-            case festivalIdx, startDate, endDate, univName, location, festivalName, themeName
-            case imgURL = "imgUrl"
-        }
+    let startDate, endDate, univName, location: String
+    let festivalName, themeName: String
+    let imgURL: String
+    
+    enum CodingKeys: String, CodingKey {
+        case festivalIdx, startDate, endDate, univName, location, festivalName, themeName
+        case imgURL = "imgUrl"
+    }
 }
 
 
@@ -49,13 +49,17 @@ struct PostRequest: Codable {
 }
 
 struct PostResponse: Codable {
-       let code: Int
-       let isSuccess: Bool
-       let message: String
-       let result: Index
+    let code: Int
+    let isSuccess: Bool
+    let message: String
+    let result: [Posting]
 }
 
-struct Index: Codable {
+struct Posting: Codable {
     let postingIdx: Int
+    let content: String
+    let festivalIdx: Int
+    let personNum: Int
+    let postingName: String
+    let imgUrl: String
 }
-

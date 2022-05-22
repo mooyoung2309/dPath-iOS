@@ -15,14 +15,14 @@ class CardViewModel:BasicViewModel {
     let apiManager = APIManager()
     
     func fetchData() {
-        apiManager.fetchFestival(idx: 21) { response in
-            switch response {
-            case .success(let data):
-                print(data)
-            case .failure(let error):
-                print(error)
-            }
-        }
+//        apiManager.fetchFestival(idx: 21) { response in
+//            switch response {
+//            case .success(let data):
+//                print(data)
+//            case .failure(let error):
+//                print(error)
+//            }
+//        }
     }
     
     override init() {

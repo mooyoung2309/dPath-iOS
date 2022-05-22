@@ -9,6 +9,7 @@ import UIKit
 import FSPagerView
 import SnapKit
 import Then
+import Kingfisher
 
 class HomeCardCell:FSPagerViewCell {
     static let Identifiler = "HomeCardCell"
@@ -28,7 +29,12 @@ class HomeCardCell:FSPagerViewCell {
         }
     }
     
-//    func configure(with model:) {
-//
-//    }
+    func configure(with model:FestivalList) {
+        cardView.cardImageView.setImage(with: model.imgURL)
+        cardView.coverView.dateLabel.text = model.date
+        cardView.coverView.titleLabel.text = model.festivalName
+        cardView.coverView.schoolNameLabel.text = model.univName
+        cardView.coverView.schoolFestivalLabel.text = model.festivalName
+        
+    }
 }

@@ -9,19 +9,19 @@ import UIKit
 
 class PostTableViewAdaptor: NSObject, UITableViewDelegate, UITableViewDataSource {
     weak var superVC: UIViewController!
-    var posts: [String] = []
+    var postings: [Posting] = []
     
     init(_ superVC: UIViewController) {
         super.init()
         self.superVC = superVC
     }
     
-    func update(posts: [String]) {
-        self.posts = posts
+    func update(postings: [Posting]) {
+        self.postings = postings
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        return posts.count
+        return postings.count
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -30,7 +30,7 @@ class PostTableViewAdaptor: NSObject, UITableViewDelegate, UITableViewDataSource
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: PostTableViewCell.identifier, for: indexPath) as! PostTableViewCell
-        cell.update(post: posts[indexPath.section])
+        cell.update(posting: postings[indexPath.section])
         
         return cell
     }

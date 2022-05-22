@@ -7,6 +7,7 @@
 
 import UIKit
 import Then
+import Alamofire
 
 class CommunityViewController: BasicViewController {
     
@@ -22,7 +23,8 @@ class CommunityViewController: BasicViewController {
         super.viewDidLoad()
         setView()
         setViewAdaptor()
-        updatePostTableView(posts: ["테스트 1", "테스트 2", "테스트 3", "테스트 4", "테스트 5", "테스트 6", "테스트 7"])
+//        updatePostTableView(posts: ["테스트 1", "테스트 2", "테스트 3", "테스트 4", "테스트 5", "테스트 6", "테스트 7"])
+        tmp()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -30,10 +32,37 @@ class CommunityViewController: BasicViewController {
         self.tabBarController?.tabBar.isHidden = false
     }
     
-    func updatePostTableView(posts: [String]) {
-        postTableViewAdaptor.update(posts: posts)
+    func updatePostTableView(postings: [Posting]) {
+        postTableViewAdaptor.update(postings: postings)
         
         postTableView.reloadData()
+    }
+    
+    func tmp() {
+        let url = "https://dongmoo.shop/postings"
+        // AF.request().responseJSON으로 호출하면 JSON형식의 response를 받는다.
+        AF.request(url, method: .get).responseJSON { response in
+            print("response: \(response)")
+            // response의 데이터를 받을 [Routineee] 타입의 리스트 변수
+            var routines: PostResponse
+            do {
+                let decoder = JSONDecoder()
+                switch (response.result) {
+                // 성공/실패 구분
+                case .success:
+                    // response의 data를 [Routineeee]로 변환
+                    routines = try decoder.decode(PostResponse.self, from: response.data!)
+                    self.updatePostTableView(postings: routines.result)
+                    print("routines: \(routines)")
+                    
+                case .failure(let error):
+                    print("errorCode: \(error._code)")
+                    print("errorDescription: \(error.errorDescription!)")
+                }
+            } catch let parsingError {
+                print("Error:", parsingError)
+            }
+        }.resume()
     }
 }
 

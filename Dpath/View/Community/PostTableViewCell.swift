@@ -48,8 +48,11 @@ class PostTableViewCell: UITableViewCell {
         setView()
     }
     
-    func update(post: String) {
-        titleLabel.text = post
+    func update(posting: Posting) {
+        titleLabel.text = posting.postingName
+        tagLabel.text = "축제"
+        peopleLabel.text = "\(String(posting.personNum))명"
+        locationLabel.text = "성신여대"
     }
 }
 

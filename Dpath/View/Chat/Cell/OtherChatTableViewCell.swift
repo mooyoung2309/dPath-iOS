@@ -57,6 +57,7 @@ class OtherChatTableViewCell: UITableViewCell {
 
 extension OtherChatTableViewCell {
     func setView() {
+        backgroundColor = UIColor(hex: 0xFAFAFA)
         addSubview(circleView)
         addSubview(nameLabel)
         addSubview(commentView)
@@ -68,12 +69,12 @@ extension OtherChatTableViewCell {
         commentLabel.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
-            circleView.topAnchor.constraint(equalTo: topAnchor),
+            circleView.topAnchor.constraint(equalTo: topAnchor, constant: 10),
             circleView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16),
             circleView.widthAnchor.constraint(equalToConstant: 32),
             circleView.heightAnchor.constraint(equalToConstant: 32),
             
-            nameLabel.topAnchor.constraint(equalTo: topAnchor),
+            nameLabel.topAnchor.constraint(equalTo: topAnchor, constant: 10),
             nameLabel.leadingAnchor.constraint(equalTo: circleView.trailingAnchor, constant: 8),
             
             commentLabel.topAnchor.constraint(equalTo: nameLabel.bottomAnchor, constant: 15),

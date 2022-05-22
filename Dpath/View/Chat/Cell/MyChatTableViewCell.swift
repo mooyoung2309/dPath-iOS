@@ -46,6 +46,7 @@ class MyChatTableViewCell: UITableViewCell {
 extension MyChatTableViewCell {
     
     func setView() {
+        backgroundColor = UIColor(hex: 0xFAFAFA)
         addSubview(commentView)
         addSubview(commentLabel)
         

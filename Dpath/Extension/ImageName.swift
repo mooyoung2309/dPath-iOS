@@ -26,4 +26,5 @@ struct ImageName {
     static let plus = "plus"
     static let subtract = "subtract"
     static let login = "login"
+    static let messageBox = "messageBox"
 }

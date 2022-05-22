@@ -25,17 +25,19 @@ class ChatViewController: UIViewController {
         $0.register(OtherChatTableViewCell.self, forCellReuseIdentifier: OtherChatTableViewCell.identifier)
         $0.register(MyChatTableViewCell.self, forCellReuseIdentifier: MyChatTableViewCell.identifier)
         $0.separatorStyle = .none
+        $0.backgroundColor = UIColor(hex: 0xFAFAFA)
         $0.rowHeight = 100
     }
     
     var messageView = UIView().then {
-        $0.backgroundColor = UIColor.red
+        $0.backgroundColor = UIColor.white
     }
+    var messageBoxImageView = UIImageView(image: UIImage(named: ImageName.messageBox))
     var chatTableViewAdaptor = MyChatTableViewApdator()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = UIColor(hex: 0xFAFAFA)
+        view.backgroundColor = UIColor.white
         setView()
         setViewAdaptor()
     }
@@ -61,12 +63,14 @@ extension ChatViewController {
         noticeView.addSubview(noticeLabel)
         view.addSubview(chatTableView)
         view.addSubview(messageView)
+        view.addSubview(messageBoxImageView)
         
         noticeView.translatesAutoresizingMaskIntoConstraints = false
         noticeImageView.translatesAutoresizingMaskIntoConstraints = false
         noticeLabel.translatesAutoresizingMaskIntoConstraints = false
         chatTableView.translatesAutoresizingMaskIntoConstraints = false
         messageView.translatesAutoresizingMaskIntoConstraints = false
+        messageBoxImageView.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
             noticeView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
@@ -91,7 +95,12 @@ extension ChatViewController {
             messageView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
             messageView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor),
             messageView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
-            messageView.heightAnchor.constraint(equalToConstant: 80)
+            messageView.heightAnchor.constraint(equalToConstant: 100),
+            
+            messageBoxImageView.topAnchor.constraint(equalTo: messageView.topAnchor, constant: 10),
+            messageBoxImageView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            messageBoxImageView.widthAnchor.constraint(equalToConstant: 343),
+            messageBoxImageView.heightAnchor.constraint(equalToConstant: 34),
         ])
     }
 }

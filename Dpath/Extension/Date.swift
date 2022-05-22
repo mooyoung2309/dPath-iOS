@@ -26,6 +26,9 @@ extension Date{
         dateFormatter.dateFormat = "M.d"
         return dateFormatter.string(from: self)
     }
+    func days(sinceDate: Date) -> Int? {
+        return Calendar.current.dateComponents([.day], from: sinceDate, to: self).day
+    }
     var timeString : String{
         dateFormatter.dateFormat = "a HH:mm"
         return dateFormatter.string(from: self)

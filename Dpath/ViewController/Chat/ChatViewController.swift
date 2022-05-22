@@ -9,6 +9,7 @@ import UIKit
 import Then
 
 class ChatViewController: UIViewController {
+    var posting: Posting!
     var noticeView = UIView().then {
         $0.backgroundColor = UIColor.white
     }
@@ -35,6 +36,16 @@ class ChatViewController: UIViewController {
     var messageBoxImageView = UIImageView(image: UIImage(named: ImageName.messageBox))
     var chatTableViewAdaptor = MyChatTableViewApdator()
     
+    required init?(coder: NSCoder) {
+        super.init(coder: coder)
+    }
+    
+    init(posting: Posting) {
+        super.init(nibName: nil, bundle: nil)
+        self.posting = posting
+        noticeLabel.text = "반갑습니다. 5월21일 \(posting.univName)에 함께 갈 \(posting.personNum)명을 모집 중 입니다."
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = UIColor.white
@@ -51,7 +62,7 @@ class ChatViewController: UIViewController {
 
 extension ChatViewController {
     func setViewAdaptor() {
-        chatTableViewAdaptor.update(chats: ["ddd3", "ddd2"])
+        chatTableViewAdaptor.update(chats: ["반갑습니다. 5월21일 \(posting.univName)에 함께 갈 \(posting.personNum)명을 모집 중 입니다.", "ddd2"])
         chatTableView.delegate = chatTableViewAdaptor
         chatTableView.dataSource = chatTableViewAdaptor
         chatTableView.reloadData()

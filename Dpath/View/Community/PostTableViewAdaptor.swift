@@ -31,14 +31,14 @@ class PostTableViewAdaptor: NSObject, UITableViewDelegate, UITableViewDataSource
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: PostTableViewCell.identifier, for: indexPath) as! PostTableViewCell
         cell.update(posting: postings[indexPath.section])
-        
+        cell.selectionStyle = .none
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         Log(indexPath)
         if let communityVC = superVC as? CommunityViewController {
-           let communityDetailVC = CommunityDetailViewController(postId: 1)
+           let communityDetailVC = CommunityDetailViewController(posting: postings[indexPath.section])
            communityVC.navigationController?.pushViewController(communityDetailVC, animated: true)
         }
     }

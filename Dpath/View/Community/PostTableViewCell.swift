@@ -11,8 +11,8 @@ import Then
 class PostTableViewCell: UITableViewCell {
     static let identifier = "PostTableViewCell"
     
-    var imgView = UIView().then {
-        $0.backgroundColor = UIColor.mint
+    var imgView = UIImageView().then {
+        $0.layer.masksToBounds = true
         $0.layer.cornerRadius = 20
     }
     var tagLabel = UILabel().then {
@@ -50,9 +50,10 @@ class PostTableViewCell: UITableViewCell {
     
     func update(posting: Posting) {
         titleLabel.text = posting.postingName
-        tagLabel.text = "축제"
+        tagLabel.text = posting.themeName
         peopleLabel.text = "\(String(posting.personNum))명"
-        locationLabel.text = "성신여대"
+        locationLabel.text = posting.univName
+        imgView.setImage(with: posting.imgUrl)
     }
 }
 

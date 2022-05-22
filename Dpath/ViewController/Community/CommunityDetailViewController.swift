@@ -14,14 +14,22 @@ class CommunityDetailViewController: UIViewController {
     var postId: Int!
     let disposeBag = DisposeBag()
     let selfView = CommunityDetailView()
+    var posting: Posting!
     
     required init?(coder: NSCoder) {
         super.init(coder: coder)
     }
     
-    init(postId: Int) {
+    init(posting: Posting) {
         super.init(nibName: nil, bundle: nil)
-        self.postId = postId
+        self.posting = posting
+        selfView.cardView.cardImageView.setImage(with: posting.imgUrl)
+        selfView.cardView.coverView.titleLabel.text = posting.themeName
+        selfView.cardView.coverView.schoolNameLabel.text = posting.univName
+        selfView.cardView.coverView.schoolFestivalLabel.text = posting.postingName
+        selfView.bottomView.labelView.text = posting.content
+        selfView.bottomView.chatOpenButton.setTitle("1/\(posting.personNum)명 채팅방 참여", for: .normal)
+        selfView.cardView.dayCountLabel.text = "D-\(Int.random(in: 0..<50))"
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -48,7 +56,7 @@ class CommunityDetailViewController: UIViewController {
         selfView.bottomView.chatOpenButton.rx.tap
             .asDriver()
             .drive(onNext: {
-                let vc = ChatViewController()
+                let vc = ChatViewController(posting: self.posting)
                 self.navigationController?.pushViewController(vc, animated: true)
             }).disposed(by: disposeBag)
     }

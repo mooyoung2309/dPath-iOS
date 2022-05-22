@@ -17,7 +17,7 @@ class CommunityDetailBottomView: BasicView {
     }
     
     let nickNamLabel = UILabel().then {
-        $0.text = "닉네임입니다"
+        $0.text = "닉네임"
         $0.font = .systemFont(ofSize: 14, weight: .medium)
     }
     

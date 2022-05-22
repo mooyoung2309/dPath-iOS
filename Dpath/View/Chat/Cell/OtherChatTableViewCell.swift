@@ -35,7 +35,7 @@ class OtherChatTableViewCell: UITableViewCell {
     }
     
     func update(chat: String) {
-        
+        commentLabel.text = chat
     }
     
     required init?(coder: NSCoder) {

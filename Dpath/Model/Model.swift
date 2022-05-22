@@ -62,4 +62,8 @@ struct Posting: Codable {
     let personNum: Int
     let postingName: String
     let imgUrl: String
+    let themeName: String
+    let univName: String
+    let startDate: String
+    let endDate: String
 }

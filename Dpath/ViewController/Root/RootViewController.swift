@@ -23,7 +23,7 @@ class RootViewController: UITabBarController {
         let home = HomeCardViewController()
         let calendar = CalendarViewController()
         let Community = CommunityViewController()
-        let chat = ChatViewController()
+//        let chat = ChatViewController(posting)
         let profile = ProfileViewController()
         
         let nav1 = UINavigationController(rootViewController: home)

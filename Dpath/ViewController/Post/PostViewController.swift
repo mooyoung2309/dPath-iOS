@@ -13,10 +13,20 @@ class PostViewController: BasicViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        setButton()
         configureUI()
     }
     
+    func setButton() {
+        let button = UIBarButtonItem(title: "완료", style: .plain, target: self, action: #selector(buttonPressed))
+        self.navigationItem.rightBarButtonItem = button
+        self.navigationItem.rightBarButtonItem?.tintColor = .black
+    }
+    
+    @objc
+    func buttonPressed() {
+        self.navigationController?.popViewController(animated: true)
+    }
     
     private func configureUI() {
         view.addSubview(selfView)

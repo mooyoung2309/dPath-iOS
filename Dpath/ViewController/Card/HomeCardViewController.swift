@@ -17,7 +17,11 @@ class HomeCardViewController:BasicViewController {
     let viewModel = CardViewModel()
     let selfView = HomeCardView()
     let disposeBag = DisposeBag()
-    var lists = PublishRelay<FestivalListResponse>()
+    var curLists:FestivalListResponse? {
+        didSet {
+            self.selfView.cardTableView.reloadData()
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,9 +29,6 @@ class HomeCardViewController:BasicViewController {
         getRoutineList()
         configure()
         
-        lists.subscribe(onNext: { [weak self] _ in
-            self?.selfView.cardTableView.reloadData()
-        }).disposed(by: disposeBag)
     }
     
     func getRoutineList() {
@@ -45,7 +46,7 @@ class HomeCardViewController:BasicViewController {
                     // response의 data를 [Routineeee]로 변환
                     routines = try decoder.decode(FestivalListResponse.self, from: response.data!)
                     print("routines: \(routines)")
-                    self.lists.accept(routines)
+                    self.curLists = routines
                 case .failure(let error):
                     print("errorCode: \(error._code)")
                     print("errorDescription: \(error.errorDescription!)")
@@ -70,8 +71,8 @@ class HomeCardViewController:BasicViewController {
         }
     }
     
-    private func moveToNextNav() {
-        let detail = CardDetailViewController()
+    private func moveToNextNav(data:FestivalList) {
+        let detail = CardDetailViewController(data: data)
         self.navigationController?.pushViewController(detail, animated: true)
     }
     
@@ -81,19 +82,20 @@ class HomeCardViewController:BasicViewController {
 extension HomeCardViewController: FSPagerViewDelegate,FSPagerViewDataSource  {
     
     func numberOfItems(in pagerView: FSPagerView) -> Int {
-        10
+        curLists?.result.festivalList.count ?? 0
     }
     
     func pagerView(_ pagerView: FSPagerView, cellForItemAt index: Int) -> FSPagerViewCell {
         guard let cell = pagerView.dequeueReusableCell(withReuseIdentifier: HomeCardCell.Identifiler, at: index) as? HomeCardCell else {
             return FSPagerViewCell()
         }
-        
-        //cell.configure(with: )
+        guard let data = curLists?.result.festivalList[index] else { return FSPagerViewCell() }
+        cell.configure(with:data)
         return cell
     }
     
     func pagerView(_ pagerView: FSPagerView, didSelectItemAt index: Int) {
-        moveToNextNav()
+        guard let data = curLists?.result.festivalList[index] else { return }
+        moveToNextNav(data: data)
     }
 }

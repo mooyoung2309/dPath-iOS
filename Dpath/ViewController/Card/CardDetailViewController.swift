@@ -14,12 +14,23 @@ class CardDetailViewController: BasicViewController {
     
     let disposeBag = DisposeBag()
     let selfView = CardDetailView()
+    let data:FestivalList
+    
+    init(data:FestivalList) {
+        self.data = data
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
         configure()
         setBind()
+        configureModel()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -43,6 +54,14 @@ class CardDetailViewController: BasicViewController {
                let vc = PostViewController()
                self.navigationController?.pushViewController(vc, animated: true)
             }).disposed(by: disposeBag)
+    }
+    
+    func configureModel() {
+        selfView.selfView.cardImageView.setImage(with: data.imgURL)
+        selfView.selfView.coverView.schoolFestivalLabel.text = data.festivalName
+        selfView.selfView.coverView.schoolNameLabel.text = data.univName
+        selfView.selfView.coverView.titleLabel.text = data.festivalName
+        selfView.selfView.coverView.dateLabel.text = data.date
     }
  }
 

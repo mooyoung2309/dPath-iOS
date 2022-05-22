@@ -21,7 +21,7 @@ struct ImageName {
     static let thumbUp = "thumb_up"
     static let date = "date_range"
     static let pin = "push_pin"
-    static let back = "back"
+    static let back = "back1"
     static let logo = "frame"
     static let plus = "plus"
     static let subtract = "subtract"

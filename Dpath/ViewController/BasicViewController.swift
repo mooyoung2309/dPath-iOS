@@ -23,7 +23,8 @@ class BasicViewController:UIViewController {
     
     func setBarButtonItems() {
         UINavigationBar.appearance().backIndicatorImage = UIImage(named: ImageName.back)?.withTintColor(.black, renderingMode: .alwaysOriginal)
-        UINavigationBar.appearance().backIndicatorTransitionMaskImage = UIImage(named: ImageName.back)
+        UINavigationBar.appearance().backIndicatorTransitionMaskImage = UIImage(named: ImageName.back)?.withTintColor(.black, renderingMode: .alwaysOriginal)
+        UINavigationBar.appearance().tintColor = .black
         self.navigationItem.leftItemsSupplementBackButton = true // backbutton 안숨기기
         self.navigationItem.backButtonTitle = ""
     }

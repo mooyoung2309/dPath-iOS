@@ -11,6 +11,7 @@ import SnapKit
 import Alamofire
 import RxSwift
 import RxRelay
+import Then
 
 class HomeCardViewController:BasicViewController {
     
@@ -23,12 +24,26 @@ class HomeCardViewController:BasicViewController {
         }
     }
     
+    let logoView = UIImageView(image: UIImage(named: "Frame1")).then {
+        $0.contentMode = .scaleAspectFill
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         getRoutineList()
         configure()
-        
+        setImageView()
+    }
+    
+    func setImageView() {
+        view.addSubview(logoView)
+        logoView.snp.makeConstraints { make in
+            make.top.equalTo(view.safeAreaLayoutGuide.snp.top)
+            make.height.equalTo(26)
+            make.width.equalTo(180)
+            make.centerX.equalToSuperview()
+        }
     }
     
     func getRoutineList() {

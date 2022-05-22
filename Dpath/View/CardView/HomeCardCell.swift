@@ -20,6 +20,7 @@ class HomeCardCell:FSPagerViewCell {
         super.layoutSubviews()
         contentView.backgroundColor = .gray
         configureUI()
+        cardView.dayCountLabel.text = "D-\(Int.random(in: 0..<50))"
     }
     
     private func configureUI() {

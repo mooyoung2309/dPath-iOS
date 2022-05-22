@@ -12,12 +12,12 @@ class CommunityDetailBottomView: BasicView {
     
     let topView = UIView()
     
-    let profileImageView = UIImageView(image:UIImage(named:ImageName.person)).then {
+    let profileImageView = UIImageView(image:UIImage(named:"Ellipse")).then {
         $0.contentMode = .scaleAspectFill
     }
     
     let nickNamLabel = UILabel().then {
-        $0.text = "닉네임"
+        $0.text = "이동무"
         $0.font = .systemFont(ofSize: 14, weight: .medium)
     }
     

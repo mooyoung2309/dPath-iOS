@@ -17,6 +17,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         self.window = UIWindow(windowScene: scene)
         window?.rootViewController = LoginViewController()
         window?.makeKeyAndVisible()
+        self.window?.tintColor = .black
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {

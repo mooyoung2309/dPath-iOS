@@ -33,7 +33,7 @@ extension FestivalTarget: TargetType {
 
     var path: String {
         switch self {
-        case .getFestival: return "/festivals"
+        case .getFestival(let idx): return "/festivals?festivalIdx=\(idx)"
         case .getFestivalList: return "/festivals/lists"
         case .getRecord(let idx): return "/postings/\(idx)"
         case .postRecord: return "/postings"
@@ -42,7 +42,6 @@ extension FestivalTarget: TargetType {
 
     var parameters: RequestParams? {
         switch self {
-        case .getFestival(let idx): return .query(idx)
         case .postRecord(let request): return .body(request)
         default:
             return nil

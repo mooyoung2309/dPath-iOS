@@ -15,7 +15,7 @@ class CardViewModel:BasicViewModel {
     let apiManager = APIManager()
     
     func fetchData() {
-        apiManager.fetchFestival(idx: 1) { response in
+        apiManager.fetchFestival(idx: 21) { response in
             switch response {
             case .success(let data):
                 print(data)

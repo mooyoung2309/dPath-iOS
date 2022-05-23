@@ -40,6 +40,36 @@
 		B64E60A82838FC130077FCDA /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B64E60A72838FC130077FCDA /* ProfileViewController.swift */; };
 		B64E60AA2838FC5A0077FCDA /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B64E60A92838FC5A0077FCDA /* ChatViewController.swift */; };
 		B64E60AD2838FD8B0077FCDA /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B64E60AC2838FD8B0077FCDA /* LoginViewController.swift */; };
+		B64E60AF28390A560077FCDA /* CardDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B64E60AE28390A560077FCDA /* CardDetailViewController.swift */; };
+		B64E60B128390C080077FCDA /* CardDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B64E60B028390C070077FCDA /* CardDetailView.swift */; };
+		B64E60B328390D710077FCDA /* CircleTagView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B64E60B228390D710077FCDA /* CircleTagView.swift */; };
+		B64E60B528390D7C0077FCDA /* WeekLabelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B64E60B428390D7A0077FCDA /* WeekLabelView.swift */; };
+		B64E60B7283910C10077FCDA /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B64E60B6283910C10077FCDA /* CardView.swift */; };
+		B64E60BB283936DE0077FCDA /* PostTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B64E60B9283936DE0077FCDA /* PostTableViewCell.swift */; };
+		B64E60BC283936DE0077FCDA /* PostTableViewAdaptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B64E60BA283936DE0077FCDA /* PostTableViewAdaptor.swift */; };
+		B64E60BE283936FF0077FCDA /* CommunityDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B64E60BD283936FF0077FCDA /* CommunityDetailViewController.swift */; };
+		B64E60C028393B6A0077FCDA /* ImageName.swift in Sources */ = {isa = PBXBuildFile; fileRef = B64E60BF28393B6A0077FCDA /* ImageName.swift */; };
+		B64E60C2283953360077FCDA /* CommunityDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B64E60C1283953350077FCDA /* CommunityDetailView.swift */; };
+		B64E60C4283953A70077FCDA /* CommunityDetailBottomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B64E60C3283953A70077FCDA /* CommunityDetailBottomView.swift */; };
+		B64E60C6283954770077FCDA /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = B64E60C5283954770077FCDA /* Constant.swift */; };
+		B64E60C8283969360077FCDA /* UILabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B64E60C7283969350077FCDA /* UILabel.swift */; };
+		B64E60CE2839697E0077FCDA /* MyChatTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B64E60CB2839697E0077FCDA /* MyChatTableViewCell.swift */; };
+		B64E60CF2839697E0077FCDA /* OtherChatTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B64E60CC2839697E0077FCDA /* OtherChatTableViewCell.swift */; };
+		B64E60D02839697E0077FCDA /* MyChatTableViewApdator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B64E60CD2839697E0077FCDA /* MyChatTableViewApdator.swift */; };
+		B64E60D328397D1F0077FCDA /* CardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B64E60D228397D1F0077FCDA /* CardViewModel.swift */; };
+		B64E60D528397D5F0077FCDA /* BasicViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B64E60D428397D5F0077FCDA /* BasicViewModel.swift */; };
+		B64E60D828397DD60077FCDA /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B64E60D728397DD60077FCDA /* APIManager.swift */; };
+		B64E60DA283980A20077FCDA /* Period.swift in Sources */ = {isa = PBXBuildFile; fileRef = B64E60D9283980A20077FCDA /* Period.swift */; };
+		B64E60DC283985CF0077FCDA /* BasicViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B64E60DB283985CF0077FCDA /* BasicViewController.swift */; };
+		B64E60DF28398A5B0077FCDA /* PostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B64E60DE28398A5A0077FCDA /* PostViewController.swift */; };
+		B64E60E228398AA80077FCDA /* PostView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B64E60E128398AA80077FCDA /* PostView.swift */; };
+		B64E60E528399A0C0077FCDA /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = B64E60E428399A0A0077FCDA /* Model.swift */; };
+		B64E60E728399B020077FCDA /* TargetType.swift in Sources */ = {isa = PBXBuildFile; fileRef = B64E60E628399B020077FCDA /* TargetType.swift */; };
+		B64E60E928399B6F0077FCDA /* FestivalTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = B64E60E828399B6F0077FCDA /* FestivalTarget.swift */; };
+		B64E60EB2839BCC20077FCDA /* SubModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B64E60EA2839BCC20077FCDA /* SubModel.swift */; };
+		B64E60ED2839BEEB0077FCDA /* UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = B64E60EC2839BEEA0077FCDA /* UIImage.swift */; };
+		B678C8CA283BD7D30077D707 /* FestivalUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = B678C8C9283BD7D20077D707 /* FestivalUseCase.swift */; };
+		B678C8CD283BD8300077D707 /* FestivalRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = B678C8CC283BD8300077D707 /* FestivalRepository.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -79,6 +109,36 @@
 		B64E60A72838FC130077FCDA /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		B64E60A92838FC5A0077FCDA /* ChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
 		B64E60AC2838FD8B0077FCDA /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		B64E60AE28390A560077FCDA /* CardDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardDetailViewController.swift; sourceTree = "<group>"; };
+		B64E60B028390C070077FCDA /* CardDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardDetailView.swift; sourceTree = "<group>"; };
+		B64E60B228390D710077FCDA /* CircleTagView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircleTagView.swift; sourceTree = "<group>"; };
+		B64E60B428390D7A0077FCDA /* WeekLabelView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WeekLabelView.swift; path = Dpath/View/Calendar/WeekLabelView.swift; sourceTree = SOURCE_ROOT; };
+		B64E60B6283910C10077FCDA /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
+		B64E60B9283936DE0077FCDA /* PostTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostTableViewCell.swift; sourceTree = "<group>"; };
+		B64E60BA283936DE0077FCDA /* PostTableViewAdaptor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostTableViewAdaptor.swift; sourceTree = "<group>"; };
+		B64E60BD283936FF0077FCDA /* CommunityDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommunityDetailViewController.swift; sourceTree = "<group>"; };
+		B64E60BF28393B6A0077FCDA /* ImageName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageName.swift; sourceTree = "<group>"; };
+		B64E60C1283953350077FCDA /* CommunityDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunityDetailView.swift; sourceTree = "<group>"; };
+		B64E60C3283953A70077FCDA /* CommunityDetailBottomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunityDetailBottomView.swift; sourceTree = "<group>"; };
+		B64E60C5283954770077FCDA /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
+		B64E60C7283969350077FCDA /* UILabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UILabel.swift; sourceTree = "<group>"; };
+		B64E60CB2839697E0077FCDA /* MyChatTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyChatTableViewCell.swift; sourceTree = "<group>"; };
+		B64E60CC2839697E0077FCDA /* OtherChatTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OtherChatTableViewCell.swift; sourceTree = "<group>"; };
+		B64E60CD2839697E0077FCDA /* MyChatTableViewApdator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyChatTableViewApdator.swift; sourceTree = "<group>"; };
+		B64E60D228397D1F0077FCDA /* CardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardViewModel.swift; sourceTree = "<group>"; };
+		B64E60D428397D5F0077FCDA /* BasicViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicViewModel.swift; sourceTree = "<group>"; };
+		B64E60D728397DD60077FCDA /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
+		B64E60D9283980A20077FCDA /* Period.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Period.swift; sourceTree = "<group>"; };
+		B64E60DB283985CF0077FCDA /* BasicViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicViewController.swift; sourceTree = "<group>"; };
+		B64E60DE28398A5A0077FCDA /* PostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostViewController.swift; sourceTree = "<group>"; };
+		B64E60E128398AA80077FCDA /* PostView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostView.swift; sourceTree = "<group>"; };
+		B64E60E428399A0A0077FCDA /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
+		B64E60E628399B020077FCDA /* TargetType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TargetType.swift; sourceTree = "<group>"; };
+		B64E60E828399B6F0077FCDA /* FestivalTarget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FestivalTarget.swift; sourceTree = "<group>"; };
+		B64E60EA2839BCC20077FCDA /* SubModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubModel.swift; sourceTree = "<group>"; };
+		B64E60EC2839BEEA0077FCDA /* UIImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIImage.swift; sourceTree = "<group>"; };
+		B678C8C9283BD7D20077D707 /* FestivalUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FestivalUseCase.swift; sourceTree = "<group>"; };
+		B678C8CC283BD8300077D707 /* FestivalRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FestivalRepository.swift; sourceTree = "<group>"; };
 		E731B4E151B6361AEE990CA3 /* Pods-Dpath.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Dpath.debug.xcconfig"; path = "Target Support Files/Pods-Dpath/Pods-Dpath.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -114,6 +174,8 @@
 		70DAC4D52838C4BD00A8E169 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				B64E60DD28398A260077FCDA /* Post */,
+				B64E60DB283985CF0077FCDA /* BasicViewController.swift */,
 				B64E60AB2838FD700077FCDA /* Login */,
 				B64E60A62838FBF80077FCDA /* Profile */,
 				B64E60A52838FBF50077FCDA /* Chat */,
@@ -146,6 +208,7 @@
 			children = (
 				70EEB1302838CBDB00F21C41 /* CommunityViewController.swift */,
 				70EEB1322838CE8600F21C41 /* TmpViewController.swift */,
+				B64E60BD283936FF0077FCDA /* CommunityDetailViewController.swift */,
 			);
 			path = Community;
 			sourceTree = "<group>";
@@ -171,6 +234,10 @@
 		B64E60572838AE680077FCDA /* Dpath */ = {
 			isa = PBXGroup;
 			children = (
+				B678C8CB283BD7F60077D707 /* Repository */,
+				B678C8C8283BD7B70077D707 /* UseCase */,
+				B64E60E3283999F30077FCDA /* Model */,
+				B64E60D628397DBD0077FCDA /* API */,
 				B64E60912838E9B30077FCDA /* ViewModel */,
 				B64E60852838CF0E0077FCDA /* View */,
 				70DAC4D52838C4BD00A8E169 /* ViewController */,
@@ -192,10 +259,15 @@
 				B64E606D2838AF730077FCDA /* Color.swift */,
 				B64E60702838AF730077FCDA /* Date.swift */,
 				B64E606F2838AF730077FCDA /* UIVIew.swift */,
+				B64E60EC2839BEEA0077FCDA /* UIImage.swift */,
 				B64E606E2838AF730077FCDA /* UIViewController.swift */,
 				B64E60752838B6370077FCDA /* IndicatorView.swift */,
 				B64E60A32838EA3D0077FCDA /* Log.swift */,
 				B64E60772838B6490077FCDA /* NetworkManager.swift */,
+				B64E60BF28393B6A0077FCDA /* ImageName.swift */,
+				B64E60C5283954770077FCDA /* Constant.swift */,
+				B64E60C7283969350077FCDA /* UILabel.swift */,
+				B64E60D9283980A20077FCDA /* Period.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -204,6 +276,7 @@
 			isa = PBXGroup;
 			children = (
 				70DAC4D32838C44300A8E169 /* HomeCardViewController.swift */,
+				B64E60AE28390A560077FCDA /* CardDetailViewController.swift */,
 			);
 			path = Card;
 			sourceTree = "<group>";
@@ -211,7 +284,9 @@
 		B64E60852838CF0E0077FCDA /* View */ = {
 			isa = PBXGroup;
 			children = (
+				B64E60E028398A900077FCDA /* PostView */,
 				B64E60882838D0FD0077FCDA /* BasicView.swift */,
+				B64E60C92839697E0077FCDA /* Chat */,
 				B64E60972838E9EE0077FCDA /* Calendar */,
 				B64E608A2838D2160077FCDA /* CardView */,
 			);
@@ -224,6 +299,9 @@
 				B64E60862838CF240077FCDA /* HomeCardView.swift */,
 				B64E608B2838D26C0077FCDA /* HomeCardCell.swift */,
 				B64E608D2838D2EE0077FCDA /* CoverView.swift */,
+				B64E60B028390C070077FCDA /* CardDetailView.swift */,
+				B64E60B6283910C10077FCDA /* CardView.swift */,
+				B64E60B8283936DE0077FCDA /* Community */,
 			);
 			path = CardView;
 			sourceTree = "<group>";
@@ -231,8 +309,10 @@
 		B64E60912838E9B30077FCDA /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				B64E60D128397C940077FCDA /* Card */,
 				B64E60922838E9B30077FCDA /* Calendar */,
 				B64E60942838E9B30077FCDA /* ViewModel.swift */,
+				B64E60D428397D5F0077FCDA /* BasicViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -250,6 +330,8 @@
 			children = (
 				B64E60982838E9EE0077FCDA /* Cell */,
 				B64E609D2838E9EE0077FCDA /* BottomSheetView.swift */,
+				B64E60B428390D7A0077FCDA /* WeekLabelView.swift */,
+				B64E60B228390D710077FCDA /* CircleTagView.swift */,
 			);
 			path = Calendar;
 			sourceTree = "<group>";
@@ -287,6 +369,95 @@
 				B64E60AC2838FD8B0077FCDA /* LoginViewController.swift */,
 			);
 			path = Login;
+			sourceTree = "<group>";
+		};
+		B64E60B8283936DE0077FCDA /* Community */ = {
+			isa = PBXGroup;
+			children = (
+				B64E60B9283936DE0077FCDA /* PostTableViewCell.swift */,
+				B64E60BA283936DE0077FCDA /* PostTableViewAdaptor.swift */,
+				B64E60C1283953350077FCDA /* CommunityDetailView.swift */,
+				B64E60C3283953A70077FCDA /* CommunityDetailBottomView.swift */,
+			);
+			name = Community;
+			path = Dpath/View/Community;
+			sourceTree = SOURCE_ROOT;
+		};
+		B64E60C92839697E0077FCDA /* Chat */ = {
+			isa = PBXGroup;
+			children = (
+				B64E60CA2839697E0077FCDA /* Cell */,
+			);
+			path = Chat;
+			sourceTree = "<group>";
+		};
+		B64E60CA2839697E0077FCDA /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				B64E60CB2839697E0077FCDA /* MyChatTableViewCell.swift */,
+				B64E60CC2839697E0077FCDA /* OtherChatTableViewCell.swift */,
+				B64E60CD2839697E0077FCDA /* MyChatTableViewApdator.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		B64E60D128397C940077FCDA /* Card */ = {
+			isa = PBXGroup;
+			children = (
+				B64E60D228397D1F0077FCDA /* CardViewModel.swift */,
+			);
+			path = Card;
+			sourceTree = "<group>";
+		};
+		B64E60D628397DBD0077FCDA /* API */ = {
+			isa = PBXGroup;
+			children = (
+				B64E60D728397DD60077FCDA /* APIManager.swift */,
+				B64E60E628399B020077FCDA /* TargetType.swift */,
+				B64E60E828399B6F0077FCDA /* FestivalTarget.swift */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+		B64E60DD28398A260077FCDA /* Post */ = {
+			isa = PBXGroup;
+			children = (
+				B64E60DE28398A5A0077FCDA /* PostViewController.swift */,
+			);
+			path = Post;
+			sourceTree = "<group>";
+		};
+		B64E60E028398A900077FCDA /* PostView */ = {
+			isa = PBXGroup;
+			children = (
+				B64E60E128398AA80077FCDA /* PostView.swift */,
+			);
+			path = PostView;
+			sourceTree = "<group>";
+		};
+		B64E60E3283999F30077FCDA /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				B64E60E428399A0A0077FCDA /* Model.swift */,
+				B64E60EA2839BCC20077FCDA /* SubModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		B678C8C8283BD7B70077D707 /* UseCase */ = {
+			isa = PBXGroup;
+			children = (
+				B678C8C9283BD7D20077D707 /* FestivalUseCase.swift */,
+			);
+			path = UseCase;
+			sourceTree = "<group>";
+		};
+		B678C8CB283BD7F60077D707 /* Repository */ = {
+			isa = PBXGroup;
+			children = (
+				B678C8CC283BD8300077D707 /* FestivalRepository.swift */,
+			);
+			path = Repository;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -406,33 +577,63 @@
 			buildActionMask = 2147483647;
 			files = (
 				B64E60AD2838FD8B0077FCDA /* LoginViewController.swift in Sources */,
+				B678C8CD283BD8300077D707 /* FestivalRepository.swift in Sources */,
+				B64E60C028393B6A0077FCDA /* ImageName.swift in Sources */,
 				B64E60A02838E9EE0077FCDA /* FestivalTableViewCell.swift in Sources */,
 				70EEB12E2838CAAE00F21C41 /* CalendarViewController.swift in Sources */,
+				B64E60DF28398A5B0077FCDA /* PostViewController.swift in Sources */,
+				B64E60D828397DD60077FCDA /* APIManager.swift in Sources */,
 				B64E60A42838EA3D0077FCDA /* Log.swift in Sources */,
 				B64E608C2838D26C0077FCDA /* HomeCardCell.swift in Sources */,
 				B64E608E2838D2EE0077FCDA /* CoverView.swift in Sources */,
 				B64E60782838B6490077FCDA /* NetworkManager.swift in Sources */,
 				B64E60A82838FC130077FCDA /* ProfileViewController.swift in Sources */,
+				B64E60DA283980A20077FCDA /* Period.swift in Sources */,
 				70EEB1332838CE8600F21C41 /* TmpViewController.swift in Sources */,
 				B64E60732838AF740077FCDA /* UIVIew.swift in Sources */,
+				B64E60E928399B6F0077FCDA /* FestivalTarget.swift in Sources */,
 				B64E60AA2838FC5A0077FCDA /* ChatViewController.swift in Sources */,
 				B64E60872838CF240077FCDA /* HomeCardView.swift in Sources */,
+				B64E60D528397D5F0077FCDA /* BasicViewModel.swift in Sources */,
+				B64E60CF2839697E0077FCDA /* OtherChatTableViewCell.swift in Sources */,
+				B64E60CE2839697E0077FCDA /* MyChatTableViewCell.swift in Sources */,
+				B64E60E528399A0C0077FCDA /* Model.swift in Sources */,
+				B64E60E728399B020077FCDA /* TargetType.swift in Sources */,
 				70DAC4D72838C4C800A8E169 /* RootViewController.swift in Sources */,
 				B64E60A12838E9EE0077FCDA /* CalendarCollectionViewApdator.swift in Sources */,
 				70DAC4D42838C44300A8E169 /* HomeCardViewController.swift in Sources */,
+				B64E60C8283969360077FCDA /* UILabel.swift in Sources */,
 				B64E60962838E9B40077FCDA /* ViewModel.swift in Sources */,
 				B64E60742838AF740077FCDA /* Date.swift in Sources */,
 				B64E60712838AF740077FCDA /* Color.swift in Sources */,
 				B64E60592838AE680077FCDA /* AppDelegate.swift in Sources */,
+				B64E60BB283936DE0077FCDA /* PostTableViewCell.swift in Sources */,
+				B64E60DC283985CF0077FCDA /* BasicViewController.swift in Sources */,
 				B64E60A22838E9EE0077FCDA /* BottomSheetView.swift in Sources */,
 				B64E60952838E9B40077FCDA /* CalendarViewModel.swift in Sources */,
+				B64E60B528390D7C0077FCDA /* WeekLabelView.swift in Sources */,
+				B64E60D02839697E0077FCDA /* MyChatTableViewApdator.swift in Sources */,
 				B64E609E2838E9EE0077FCDA /* CalendarCollectionViewCell.swift in Sources */,
+				B64E60C4283953A70077FCDA /* CommunityDetailBottomView.swift in Sources */,
 				70EEB1312838CBDB00F21C41 /* CommunityViewController.swift in Sources */,
+				B64E60C6283954770077FCDA /* Constant.swift in Sources */,
 				B64E605B2838AE690077FCDA /* SceneDelegate.swift in Sources */,
+				B64E60ED2839BEEB0077FCDA /* UIImage.swift in Sources */,
+				B64E60AF28390A560077FCDA /* CardDetailViewController.swift in Sources */,
 				B64E60762838B6370077FCDA /* IndicatorView.swift in Sources */,
 				B64E609F2838E9EE0077FCDA /* FestivalTableViewAdaptor.swift in Sources */,
+				B64E60B328390D710077FCDA /* CircleTagView.swift in Sources */,
+				B64E60C2283953360077FCDA /* CommunityDetailView.swift in Sources */,
+				B64E60E228398AA80077FCDA /* PostView.swift in Sources */,
+				B64E60B128390C080077FCDA /* CardDetailView.swift in Sources */,
 				B64E60722838AF740077FCDA /* UIViewController.swift in Sources */,
+				B64E60B7283910C10077FCDA /* CardView.swift in Sources */,
+				B64E60BE283936FF0077FCDA /* CommunityDetailViewController.swift in Sources */,
+				B64E60EB2839BCC20077FCDA /* SubModel.swift in Sources */,
 				B64E60892838D0FD0077FCDA /* BasicView.swift in Sources */,
+				B64E60BC283936DE0077FCDA /* PostTableViewAdaptor.swift in Sources */,
+				B678C8CA283BD7D30077D707 /* FestivalUseCase.swift in Sources */,
+				B64E60D328397D1F0077FCDA /* CardViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

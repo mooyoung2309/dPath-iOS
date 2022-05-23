@@ -10,7 +10,6 @@ import RxSwift
 
 class FestivalRepositoryImpl:FestivalRepository {
    
-    
     let disposeBag = DisposeBag()
     private let festivalApi:APIManager
     

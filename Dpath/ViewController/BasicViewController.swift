@@ -7,8 +7,11 @@
 
 import Foundation
 import UIKit
+import RxSwift
 
 class BasicViewController:UIViewController {
+    
+    let disposeBag = DisposeBag()
 
     override func viewDidLoad() {
         super.viewDidLoad()

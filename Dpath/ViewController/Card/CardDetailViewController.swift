@@ -12,7 +12,6 @@ import RxCocoa
 
 class CardDetailViewController: BasicViewController {
     
-    let disposeBag = DisposeBag()
     let selfView = CardDetailView()
     let data:FestivalList
     

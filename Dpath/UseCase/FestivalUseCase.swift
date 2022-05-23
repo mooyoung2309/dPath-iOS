@@ -17,5 +17,6 @@ class FestivalUseCase {
     
     func fetchFestivalList() -> Single<FestivalListResponse> {
         return festivalRepository.fetchFestivalList()
+
     }
 }

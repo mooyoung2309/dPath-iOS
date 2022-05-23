@@ -8,8 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		0DA30CD69EBDD500CAB6B54A /* Pods_Dpath.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A8BF2805690827FA1008017 /* Pods_Dpath.framework */; };
-		70DAC4D02838C43000A8E169 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 70DAC4CF2838C43000A8E169 /* Base */; };
-		70DAC4D22838C43D00A8E169 /* Base.lproj in Resources */ = {isa = PBXBuildFile; fileRef = 70DAC4D12838C43D00A8E169 /* Base.lproj */; };
 		70DAC4D42838C44300A8E169 /* HomeCardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70DAC4D32838C44300A8E169 /* HomeCardViewController.swift */; };
 		70DAC4D72838C4C800A8E169 /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70DAC4D62838C4C800A8E169 /* RootViewController.swift */; };
 		70EEB12E2838CAAE00F21C41 /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70EEB12D2838CAAE00F21C41 /* CalendarViewController.swift */; };
@@ -70,12 +68,11 @@
 		B64E60ED2839BEEB0077FCDA /* UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = B64E60EC2839BEEA0077FCDA /* UIImage.swift */; };
 		B678C8CA283BD7D30077D707 /* FestivalUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = B678C8C9283BD7D20077D707 /* FestivalUseCase.swift */; };
 		B678C8CD283BD8300077D707 /* FestivalRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = B678C8CC283BD8300077D707 /* FestivalRepository.swift */; };
+		B678C8CF283BE3F60077D707 /* FestivalRepositoryImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = B678C8CE283BE3F60077D707 /* FestivalRepositoryImpl.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		2A6EC2B1EFBE1B640A1B85B0 /* Pods-Dpath.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Dpath.release.xcconfig"; path = "Target Support Files/Pods-Dpath/Pods-Dpath.release.xcconfig"; sourceTree = "<group>"; };
-		70DAC4CF2838C43000A8E169 /* Base */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = Base; path = Dpath/Base; sourceTree = SOURCE_ROOT; };
-		70DAC4D12838C43D00A8E169 /* Base.lproj */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Base.lproj; sourceTree = "<group>"; };
 		70DAC4D32838C44300A8E169 /* HomeCardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeCardViewController.swift; sourceTree = "<group>"; };
 		70DAC4D62838C4C800A8E169 /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
 		70EEB12D2838CAAE00F21C41 /* CalendarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewController.swift; sourceTree = "<group>"; };
@@ -139,6 +136,7 @@
 		B64E60EC2839BEEA0077FCDA /* UIImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIImage.swift; sourceTree = "<group>"; };
 		B678C8C9283BD7D20077D707 /* FestivalUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FestivalUseCase.swift; sourceTree = "<group>"; };
 		B678C8CC283BD8300077D707 /* FestivalRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FestivalRepository.swift; sourceTree = "<group>"; };
+		B678C8CE283BE3F60077D707 /* FestivalRepositoryImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FestivalRepositoryImpl.swift; sourceTree = "<group>"; };
 		E731B4E151B6361AEE990CA3 /* Pods-Dpath.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Dpath.debug.xcconfig"; path = "Target Support Files/Pods-Dpath/Pods-Dpath.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -241,8 +239,6 @@
 				B64E60912838E9B30077FCDA /* ViewModel */,
 				B64E60852838CF0E0077FCDA /* View */,
 				70DAC4D52838C4BD00A8E169 /* ViewController */,
-				70DAC4D12838C43D00A8E169 /* Base.lproj */,
-				70DAC4CF2838C43000A8E169 /* Base */,
 				B64E606C2838AF070077FCDA /* Extension */,
 				B64E60582838AE680077FCDA /* AppDelegate.swift */,
 				B64E605A2838AE690077FCDA /* SceneDelegate.swift */,
@@ -456,6 +452,7 @@
 			isa = PBXGroup;
 			children = (
 				B678C8CC283BD8300077D707 /* FestivalRepository.swift */,
+				B678C8CE283BE3F60077D707 /* FestivalRepositoryImpl.swift */,
 			);
 			path = Repository;
 			sourceTree = "<group>";
@@ -521,8 +518,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				B64E60652838AE6C0077FCDA /* LaunchScreen.storyboard in Resources */,
-				70DAC4D02838C43000A8E169 /* Base in Resources */,
-				70DAC4D22838C43D00A8E169 /* Base.lproj in Resources */,
 				B64E60622838AE6C0077FCDA /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -632,6 +627,7 @@
 				B64E60EB2839BCC20077FCDA /* SubModel.swift in Sources */,
 				B64E60892838D0FD0077FCDA /* BasicView.swift in Sources */,
 				B64E60BC283936DE0077FCDA /* PostTableViewAdaptor.swift in Sources */,
+				B678C8CF283BE3F60077D707 /* FestivalRepositoryImpl.swift in Sources */,
 				B678C8CA283BD7D30077D707 /* FestivalUseCase.swift in Sources */,
 				B64E60D328397D1F0077FCDA /* CardViewModel.swift in Sources */,
 			);

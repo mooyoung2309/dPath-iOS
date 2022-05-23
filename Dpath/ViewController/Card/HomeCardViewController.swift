@@ -17,12 +17,6 @@ class HomeCardViewController:BasicViewController {
     
     let viewModel:CardViewModel
     let selfView = HomeCardView()
-    let disposeBag = DisposeBag()
-    var curLists:FestivalListResponse? {
-        didSet {
-            self.selfView.cardTableView.reloadData()
-        }
-    }
     
     let logoView = UIImageView(image: UIImage(named: "Frame1")).then {
         $0.contentMode = .scaleAspectFill
@@ -78,20 +72,20 @@ class HomeCardViewController:BasicViewController {
 extension HomeCardViewController: FSPagerViewDelegate,FSPagerViewDataSource  {
     
     func numberOfItems(in pagerView: FSPagerView) -> Int {
-        curLists?.result.festivalList.count ?? 0
+        viewModel.currentFestivalList.festivalList.count
     }
     
     func pagerView(_ pagerView: FSPagerView, cellForItemAt index: Int) -> FSPagerViewCell {
         guard let cell = pagerView.dequeueReusableCell(withReuseIdentifier: HomeCardCell.Identifiler, at: index) as? HomeCardCell else {
             return FSPagerViewCell()
         }
-        guard let data = curLists?.result.festivalList[index] else { return FSPagerViewCell() }
+        let data = viewModel.currentFestivalList.festivalList[index]
         cell.configure(with:data)
         return cell
     }
     
     func pagerView(_ pagerView: FSPagerView, didSelectItemAt index: Int) {
-        guard let data = curLists?.result.festivalList[index] else { return }
+        let data = viewModel.currentFestivalList.festivalList[index]
         moveToNextNav(data: data)
     }
 }

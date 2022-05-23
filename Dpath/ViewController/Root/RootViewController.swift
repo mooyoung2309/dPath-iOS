@@ -20,7 +20,10 @@ class RootViewController: UITabBarController {
     }
 
     private func setupControllers() {
-        let home = HomeCardViewController()
+        let rp = FestivalRepositoryImpl(festvalApi: APIManager())
+        let uc = FestivalUseCase(festivalRepository: rp)
+        let vm = CardViewModel(usecase: uc)
+        let home = HomeCardViewController(viewModel: vm)
         let calendar = CalendarViewController()
         let Community = CommunityViewController()
 //        let chat = ChatViewController(posting)

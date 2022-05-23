@@ -51,7 +51,7 @@ class CardDetailViewController: BasicViewController {
         selfView.bottomButton.rx.tap
             .asDriver()
             .drive(onNext: {
-               let vc = PostViewController()
+                let vc = PostViewController()
                self.navigationController?.pushViewController(vc, animated: true)
             }).disposed(by: disposeBag)
     }

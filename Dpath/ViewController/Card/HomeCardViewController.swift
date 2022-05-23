@@ -15,7 +15,7 @@ import Then
 
 class HomeCardViewController:BasicViewController {
     
-    let viewModel = CardViewModel()
+    let viewModel:CardViewModel
     let selfView = HomeCardView()
     let disposeBag = DisposeBag()
     var curLists:FestivalListResponse? {
@@ -28,10 +28,17 @@ class HomeCardViewController:BasicViewController {
         $0.contentMode = .scaleAspectFill
     }
     
+    init(viewModel:CardViewModel) {
+        self.viewModel = viewModel
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        getRoutineList()
         configure()
         setImageView()
     }

@@ -17,6 +17,7 @@ class CardViewModel:BasicViewModel {
        }
     
     func fetchData() {
+        
     }
     
     init(usecase:FestivalUseCase) {

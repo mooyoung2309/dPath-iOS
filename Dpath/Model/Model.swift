@@ -29,19 +29,6 @@ struct Festival: Codable {
     }
 }
 
-
-// MARK: - ImgURL
-//struct ImgURL: Codable {
-//    let imgURL: String
-//    let imgURLIdx: Int
-//
-//    enum CodingKeys: String, CodingKey {
-//        case imgURL = "imgUrl"
-//        case imgURLIdx = "imgUrlIdx"
-//    }
-//}
-
-
 struct PostRequest: Codable {
     let content: String
     let festivalIdx, personNum, postingIdx: Int

@@ -6,7 +6,9 @@
 //
 
 import Foundation
+import RxSwift
 
 protocol FestivalRepository {
     init(festvalApi: APIManager)
+    func fetchFestivalList() -> Single<FestivalListResponse>
 }

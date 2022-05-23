@@ -12,11 +12,11 @@ struct FestivalListResponse: Codable {
     let code: Int
     let isSuccess: Bool
     let message: String
-    let result: Result
+    let result: FestivalListResult
 }
 
 // MARK: - Result
-struct Result: Codable {
+struct FestivalListResult: Codable {
     let festivalList: [FestivalList]
 }
 
